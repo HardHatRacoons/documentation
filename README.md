@@ -72,3 +72,5 @@ Once a month, come back to this document and update any needed changes
 ### Team Member Signatures
 - Itsara McCarthy
 - Lucy Zhang
+- Emmie Teng
+
