@@ -70,6 +70,6 @@ The roles listed are just a point of contact of who to go to when a specific iss
 Once a month, come back to this document and update any needed changes
 
 ### Team Member Signatures
-Itsara McCarthy
-Lucy Zhang
-
+- Itsara McCarthy
+- Lucy Zhang
+- Emmie Teng
