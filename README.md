@@ -73,4 +73,4 @@ Once a month, come back to this document and update any needed changes
 - Itsara McCarthy
 - Lucy Zhang
 - Emmie Teng
-- Stella Yang
+- Stella Yang ✨
