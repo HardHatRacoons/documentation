@@ -74,3 +74,4 @@ Once a month, come back to this document and update any needed changes
 - Lucy Zhang
 - Emmie Teng
 - Stella Yang ✨
+- Christopher Kelley
