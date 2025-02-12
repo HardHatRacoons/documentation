@@ -8,6 +8,6 @@ This repository contains our documentation platform generated with [docsify](htt
 
 For more information about how to setup docsify, visit [this link](https://docsify.js.org/#/quickstart)
 
-Before running the docsify site, make sure you have installed all the dependency with `npm i docsify -g -complete`
+Before running the docsify site, make sure you have installed all the dependency with `npm i docsify-cli -g -complete`
 
 Then you can run docsify with `docsify serve docs`
