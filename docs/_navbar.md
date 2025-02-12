@@ -1,3 +1,3 @@
-* [Capstone Report](/report/report.md)
+* [Capstone Report](/report/)
 * [Front-end](/front-end/)
-* [Back-end](/back-end)
+* [Back-end](/back-end/)
