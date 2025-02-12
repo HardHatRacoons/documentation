@@ -1,7 +1,5 @@
-# Documentation Repo
-
-## Team Agreement
-### Team Goals and Objectives
+# Team Agreement
+## Team Goals and Objectives
 - Improve Blueprint Reading Algorithm
 - Develop 3D modelling script
 - Have fun working on the project!
@@ -12,7 +10,7 @@
 - Get a job (for michael)
 - Stay as friends after
 
-### Roles and Responsibilities
+## Roles and Responsibilities
 The roles listed are just a point of contact of who to go to when a specific issue occurs in the respective field. The names listed in the roles are not bound to only partaking the tasks of that role. The listed responsibilities are what they are held accountable for.
 - Project Lead: Stella Yang
   - Responsibilities:
@@ -38,7 +36,7 @@ The roles listed are just a point of contact of who to go to when a specific iss
     - Assigning tasks to team members
     - Other logistics
 
-### Communication Expectations
+## Communication Expectations
 - Communicate changes if there are updates since the last discussion
 - Wait for some approval from team if not urgent
 - Discord Bot to communicate GitHub changes
@@ -49,7 +47,7 @@ The roles listed are just a point of contact of who to go to when a specific iss
   - This can be updated to an alternate system if it proves to not work
 - Start trying early and ask for help early
 
-###  Meeting Structure and Availability Expectations
+##  Meeting Structure and Availability Expectations
 - Meetings with sponsors
   - Report on progress completed done in the past week (from our scrum board)
   - Questions for sponsors
@@ -58,7 +56,7 @@ The roles listed are just a point of contact of who to go to when a specific iss
   - Put down questions/notes/concerns for sponsors throughout the week
 - Show up to every class and let team know ahead of time if there is a conflict
 
-### Change Requests
+## Change Requests
 - Don’t push to main
 - Branch protection
 - Make small and frequent commits
@@ -66,10 +64,10 @@ The roles listed are just a point of contact of who to go to when a specific iss
 - Do not commit code that you don’t understand
 - Critical Bugs fixed ASAP
 
-### Team Agreement Maintenance
+## Team Agreement Maintenance
 Once a month, come back to this document and update any needed changes
 
-### Team Member Signatures
+## Team Member Signatures
 - Itsara McCarthy
 - Lucy Zhang
 - Emmie Teng
