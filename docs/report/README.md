@@ -1,4 +1,5 @@
-# Capstone Report 
+# Capstone Report - HardHatRacoons
+Devs: Chris Kelley, Michael McCarthy, Emmie Teng, Stella Yang, Lucy Zhang
 
 ## Introduction
 The construction industry accounted for over 8 million jobs in 2024, according to the US Bureau of Labor Statistics (1). Vector Intelligence is partnered with the steel industry to create a software that helps the end users estimate their projected material cost from a vectorized construction blueprint. This allows for end users to spend only a few minutes to gain specifications and insights about a project instead of spending days to get the same information manually. The initial success rate of the software in automatically generating specifications from a construction blueprint is 75% and our job will be to enhance that algorithm while wrapping all of the information into a more user friendly interface.
