@@ -1,6 +1,24 @@
 # Frontend Documentation
 Welcome to the Frontend section of HardHatRaccoon Documentation.
 
+To get started, clone the repository by running
+
+```bash
+git clone git@github.com:HardHatRacoons/rustle-rustle-react.git
+```
+
+Then install all of the dependencies with:
+
+```bash
+npm i
+```
+
+Lastly, run the website locally with:
+
+```bash
+npx vite
+```
+
 ## The Tech Stack
 ### Main Tools
 #### ReactJS
