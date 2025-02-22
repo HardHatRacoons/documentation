@@ -150,4 +150,3 @@ Annotates bounding regions in a given file based on clustering parameters a.
 
 **Returns:**
 - `None`: The function processes the file and annotates bounds but does not return a value.
-
