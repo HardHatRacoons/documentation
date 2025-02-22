@@ -1,5 +1,5 @@
-# Backend Documentation
-Welcome to the Backend section of HardHatRaccoon Documentation.
+# Algorithm Documentation
+Welcome to the Algorithm section of HardHatRaccoon Documentation.
 
 ```bash
 git clone git@github.com:HardHatRacoons/trash-heap.git
@@ -8,9 +8,9 @@ git clone git@github.com:HardHatRacoons/trash-heap.git
 Then make a virtual environment and download required libraries:
 
 ```bash
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 
@@ -39,6 +39,23 @@ Computes the Euclidean norm (magnitude) of a 2D vector.
 
 ---
 
+## `orientation(p1, p2, p3)`
+
+Finds the orientation of an ordered triplet `(p1, p2, p3)`.
+
+**Parameters:**
+
+- `p1` (tuple or list of float): First point.
+- `p2` (tuple or list of float): Second point.
+- `p3` (tuple or list of float): Third point.
+
+**Returns:**
+
+- `int`: `0` for collinear, `1` for clockwise, `2` for counterclockwise.
+
+---
+
+
 ## `distance_point_to_segment(P, A, B)`
 Computes the shortest distance from a point `P` to a line segment defined by points `A` and `B`.
 
@@ -49,6 +66,40 @@ Computes the shortest distance from a point `P` to a line segment defined by poi
 
 **Returns:**
 - `float`: The shortest distance from `P` to segment `AB`.
+
+---
+
+## `segment_intersection(A1, A2, B1, B2)`
+
+Determines if two line segments `A1A2` and `B1B2` intersect.
+
+**Parameters:**
+
+- `A1` (tuple or list of float): First endpoint of the first segment.
+- `A2` (tuple or list of float): Second endpoint of the first segment.
+- `B1` (tuple or list of float): First endpoint of the second segment.
+- `B2` (tuple or list of float): Second endpoint of the second segment.
+
+**Returns:**
+
+- `bool`: `True` if the segments intersect, `False` otherwise.
+
+---
+
+## `segment_continuous(A1, A2, B1, B2)`
+
+Determines if two line segments `A1A2` and `B1B2` fall within the same line.
+
+**Parameters:**
+
+- `A1` (tuple or list of float): First endpoint of the first segment.
+- `A2` (tuple or list of float): Second endpoint of the first segment.
+- `B1` (tuple or list of float): First endpoint of the second segment.
+- `B2` (tuple or list of float): Second endpoint of the second segment.
+
+**Returns:**
+
+- `bool`: `True` if the segments fall within the same line, `False` otherwise.
 
 ---
 
@@ -99,4 +150,3 @@ Annotates bounding regions in a given file based on clustering parameters a.
 
 **Returns:**
 - `None`: The function processes the file and annotates bounds but does not return a value.
-
