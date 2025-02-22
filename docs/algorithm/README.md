@@ -8,9 +8,9 @@ git clone git@github.com:HardHatRacoons/trash-heap.git
 Then make a virtual environment and download required libraries:
 
 ```bash
-    python -m venv venv
-    source venv/bin/activate
-    pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 
