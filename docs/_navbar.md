@@ -1,4 +1,5 @@
 * [Capstone Report](/report/)
 * [Individual Report](/individual_report/)
+* [Team Report](/team_report/)
 * [Application](/application/)
 * [Algorithm](/algorithm/)
