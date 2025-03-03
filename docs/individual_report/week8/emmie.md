@@ -2,7 +2,7 @@
 
 **Team**: HardHatRacoons (Construction Blueprint)
 
-**Date**: 
+**Date**:  March 3, 2025
 
 ## Current Status
 
@@ -15,6 +15,7 @@
 |      |        |            |
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
+![Current home page with cards](./images/emmie-homepage.png)
 
 ### What problems did you run into? What is your plan for them?
 
