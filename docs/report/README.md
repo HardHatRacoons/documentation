@@ -318,7 +318,60 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 - Add export functionality (download reports of labeled blueprints).
 
 ### A.4 Software Development Artifacts
-TBD
+#### Product Backlog:
+**Sprint 1**
+
+|  Id  | User Story                                                | Assigned to         | Points    |
+| ---- | --------------------------------------------------------- |-------------------- | --------- |
+|  1   | Identifying pages related to steel                        | Michael             |     1     |
+|  2   | Identifying clusters related to steel and annotate them   | Michael, Chris      |     5     | 
+|  3   | Basic navigation and set up of web app                    | Lucy                |     1     |
+|  6   | Fine Tuning DBSCAN for better identification              | Michael, Chris      |     5     |
+|  7   | Deploy project on AWS Amplify                             | Chris               |     3     | 
+|  9   | View Annotated PDF on web app                             | Lucy                |     3     |
+
+**Sprint 2**
+
+|  Id  | User Story                                                           | Assigned to         | Points  |
+| ---- | -------------------------------------------------------------------- |-------------------- | ------- |
+|  8   | Displaying a list of blueprints that a user has                      | Emmie               |    3    |
+|  22  | Upload interface with file upload to AWS                             | Emmie               |    2    | 
+|  37  | Select a blueprint to view from file view                            | Stella              |    1    |
+|  42  | Run Annotation algorithm on AWS lambda                               | Michael             |    5    | 
+|  43  | Blueprint identification of important pages to actually annotate     | Chris               |    5    | 
+|  44  | dentification of important clusters to annotate on given page in PDF | Chris               |    2    |
+|  59  | Design and implement table view                                      | Lucy                |    3    | 
+|  60  | Design and implement metrics view                                    | Lucy                |    3    | 
+|  62  | Authentication                                                       | Stella              |    2    |
+
+**Sprint 3**
+
+|  Id  | User Story                                                           | Assigned to         | Points  |
+| ---- | -------------------------------------------------------------------- |-------------------- | ------- |
+|  54  | Display title in a gallery for blueprint files                       | Emmie               |    2    | 
+|  95  | Delete file button                                                   | Emmie               |    1    | 
+|  86  | Display thumbnail on blueprint files                                 | Emmie               |    3    |
+|  99  | Profile and analyze clustering performance                           | Chris & Michael     |    2    | 
+| 100  | Reduce clustering algorithmn run time                                | Michael             |    5    |
+| 101  | Identify edge cases for page identification                          | Chris               |    2    | 
+| 102  | Identify edge cases for clustering identification                    | Chris               |    5    | 
+| 103  | Padding the convex hull identification                               | Michael             |    1    | 
+| 104  | Populate tables with CSV                                             | Lucy                |    1    | 
+| 105  | Button to download PDFs                                              | Stella              |    1    | 
+| 106  | Status display of completion of annotation                           | Stella              |    1    | 
+| 111  | Search bar by name feature for blueprint file                        | Stella              |    2    |
+| 117  | Initialize metric view graphs                                        | Lucy                |    2    | 
+| 118  | Error message for file you don't own                                 | Lucy                |    1    | 
+| 122  | Develop test bed of potential input for algorithm                    | Michael             |    3    |
+
+**Sprint 4**
+|  Id  | User Story                                                           | Assigned to         | Points  |
+| ---- | -------------------------------------------------------------------- |-------------------- | ------- |
+| 112  | Hover over blueprint to get summarized data                          | Emmie               |    2    | 
+| 116  | Integrate algorithm to run with the app                              | Michael             |    3    | 
+| 119  | File sharing between users                                           | Emmie               |    3    | 
+| 121  | Steel provider provisioning users                                    | ??                  |    ?    |        
+
 
 ### A.5 Budget
 As of the current phase of the project we project that we will only need a budget to pay for AWS Cloud Computing services. The specific services that we will be using are:
