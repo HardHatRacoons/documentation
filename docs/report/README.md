@@ -48,7 +48,27 @@ The system will be evaluated through a combination of quantitative and qualitati
 **Main findings**: this section will be filled out as we proceed with our evaluations.
 
 ## 2 Related Work
-TBD
+#### **Domain References**:
+According to the article “Blueprinting construction logistics services for quality improvement” by Gremyr et al. (2022), an improvement in construction logistics services will improve the “efficiency and sustainability of construction projects” (p. 60). However, due to a lack of a concrete definition (no pun intended) of what processes need to be in place, it can be difficult to make noticeable improvements to construction logistics services. One way to find what changes will lead to improvements is by making any change, so why not start by streamlining the bidding process.
+
+Analyzing construction drawings and blueprints requires a lot of manual effort, in the article “Towards fully automated processing and analysis of construction diagrams: AI-powered symbol detection” (Jamieson et al, 2024), Jamieson et al. propose a way to automate the processing of construction drawings. Our product would take it a step further by processing a computerized blueprint into a breakdown of materials needed for steel suppliers.
+
+3D Point Cloud data is an accurate representation of a 3D space obtained by laser scans and images. “Applications of 3D point cloud data in the construction industry: A fifteen-year review from 2004 to 2018” (Wang and Kim, 2019) explores the use cases of 3D point cloud data such as 3D reconstruction and geometric quality inspection. Typically, a 3D model is scanned into point cloud data and then compressed into a blueprint, we will essentially be reverse engineering this process to get information in 3d space.
+
+#### **Direct References**:
+To recover information from blueprint floor plans that are stored as rasterized images, the article “Vectorizing Building Blueprints” (Song, 2022) proposes an algorithm that vectorizes the provided image. The algorithm segments the image, fills in any gaps with machine learning (generative adversarial network to be specific), and simplifies the model. The article compares this approach to two other methods currently proposed and notes significant improvement. Learning-based algorithms such as the one proposed in the prior article have shown more prevalence in comparison to rule-based algorithms in recent years, as recent advancements in the field have made them more viable (Pizzaro, 2022). The project team’s algorithm seeks to recognize steel structures in construction blueprints and similarly label components of the blueprint. The approach described in the article may be considered as a prospective way to implement some of the structure and symbol recognition in the project team’s algorithm as  it was highly successful. However, floor plan blueprints look dissimilar to construction blueprints in some aspects as they generally do not describe the underlying structure of the building in detail. 
+
+Another article, “A Deep Learning Approach to Semantic Segmentation for Architectural Blueprint Interpretation and Geographic-based Material Recommendation” (Chon, 2024), describes a method of using machine learning to identify what parts of a floor plan blueprint relate to each type of room and the alignment of the rooms. The algorithm proposed is a convolution neural network, which segments the given blueprint into component rooms, similar to the first step of the first discussed direct reference. The segmentation approach may help the project team break down a construction blueprint into recognizable steel structures, but other algorithms will be considered first as speed of processing is the main priority in the project.
+In a separate article, “Using Architectural Blueprints for Intelligent Robot Cognitive Mapping as a Knowledge Based System”, the author writes that “The project’s aim is to give the ability to the intelligent robot read and gain knowledge from the architectural blueprints maps of indoor environments to build its own cognitive maps as a knowledge-based system” (Al-Ghazi, 2010, p. 4). The project seeks to do the same but in a format that humans can understand and interpret, rather than interpreted by an artificial intelligence. The project can reference the algorithms used in the article to interpret the indoor blueprints.
+
+#### **Peripheral References**:
+One of the biggest related topics to our project is image semantic segmentation, the idea of classifying each pixel in an image into a category. Related methods will be useful to reference when building our solution because we are similarly aiming to classify each line segment into a cluster. A few related works have described various semantic segmentation methods and different perspectives on how they used them. The first article “Rethinking Atrous Convolution for Semantic Image Segmentation” (Chen, 2017) describes using a method called atrous convolution, a method of increasing the field of view without losing details, which will be useful for us when we try identifying smaller steel structures. Another article “RefineNet: Multi-Path Refinement Networks for High-Resolution Semantic Segmentation” describes a method of using multiple paths to use long range connections along with multiple paths to get the most accurate result for which category a pixel belongs to, which might be relevant when defining which line segments belong to which clusters. The last semantic segmentation article “Learning Object Interactions and Descriptions for Semantic Image Segmentation” (Wang, 2017) uses CNNs to learn how objects are labeled and then applies that to semantic segmentation by making a prediction for which category each pixel belongs to, which might be a useful method to cluster each group of line segments relatively quickly. 
+
+Another useful topic to explore is 3D modelling, as it is related to one of our stretch goals. 3D modelling will be helpful in visualizing where each piece of steel will go in the building. A relevant article for this “Building Information Modeling (BIM): Trends, Benefits, Risks, and Challenges for the AEC Industry” (Azhar, 2011) describes the importance of information having a model when it comes to building and construction. Also, it mentions the ease of converting from a 3D model into a cost analysis, which is one of the end goals of our project. Another reference “3D Modelling by Means of Artificial Intelligence” (Bebeshko, 2021) describes their method of using AI and machine learning to create 3D models using 2D images. This could be an alternate approach to reading blueprints and creating models.
+One specific method that will be explored for our project is recognizing text in an image. This will be useful when determining which pages of a building are relevant and should be added to the total cost of the building. One article “Methods of recognizing texts in different images” (Raximov, 2021) gives a detailed guide on how to do this, including methods of doing it in different languages if necessary. Another related article “Deep Learning for Computer Vision: A Brief Review” (Voulodimos, 2018) talks about using computer vision to perform various tasks, including object detection, which might be useful to determine which blocks are text and even further, what each text block says. 
+
+A more specific topic is the use of lambda functions to process an object automatically through a function. This was one of our ideas to quickly process blueprint pdfs and return it back to the front-end. The article “On Data Processing through the Lenses of S3 Object Lambda” (Sarroca, 2023) describes the uses of lambda functions, along with the pros and cons of using this method over other methods.
+
 
 ## 3 Requirements
 The requirements section focuses on user stories and identifying a success criteria. The user stories go over the need for an accessible, user-friendly interface for various stakeholders. The success criteria involve improving the blueprint reading algorithm and creating the user interface to present the results.
@@ -180,7 +200,38 @@ TBD
 TBD
 
 ## References
-(1) U.S. Bureau of Labor Statistics. (2025, January 2). Industries at a glance: Construction: NAICS 23. U.S. Bureau of Labor Statistics. https://www.bls.gov/iag/tgs/iag23.htm
+(1) Al-Ghazi, S. I., & Owaied, H. H. (2010). Using Architectural Blueprints for Intelligent Robot Cognitive Mapping as a Knowledge Based System. Middle East University. https://meu.edu.jo/libraryTheses/58734f10a058f_1.pdf
+
+(2) Azhar, S. (2011). Building information modeling (BIM): Trends, benefits, risks, and challenges for the AEC industry. Leadership and management in engineering, 11(3), 241-252. https://doi.org/10.1061/(ASCE)LM.1943-5630.0000127
+
+(3) Bebeshko, B., Khorolska, K., Kotenko, N., Desiatko, A., Saunova, K., Sagyndykova, S., Tyshchenko, D. (2021). 3D MODELLING BY MEANS OF ARTIFICIAL INTELLIGENCE. Journal of Theoretical and Applied Information Technology , 99(6). https://www.jatit.org/volumes/Vol99No6/5Vol99No6.pdf
+
+(4) Chen, L. C., Papandreou, G., Schroff, F., & Adam, H. (2017). Rethinking atrous convolution for semantic image segmentation. arXiv preprint arXiv:1706.05587. https://doi.org/10.48550/arXiv.1706.05587
+
+(5) Chon, A., & Gabor, P. (2024). A Deep Learning Approach to Semantic Segmentation for Architectural Blueprint Interpretation and Geographic-based Material Recommendation. Journal of Student Research, 13(1). https://doi.org/10.47611/jsrhs.v13i1.6186
+
+(6) Gremyr, I., Bäckstrand, J., Fredriksson, A., Gatenholm, G., & Halldórsson, Á. (2022). Blueprinting construction logistics services for quality improvement. Construction Management and Economics, 41(1), 60–78. https://doi.org/10.1080/01446193.2022.2130384
+
+(7) Jamieson, L., Moreno-Garcia, C.F. & Elyan, E. Towards fully automated processing and analysis of construction diagrams: AI-powered symbol detection. IJDAR (2024). https://doi.org/10.1007/s10032-024-00492-9
+
+(8) Lin, G., Milan, A., Shen, C., & Reid, I. (2017). Refinenet: Multi-path refinement networks for high-resolution semantic segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 1925-1934). https://doi.org/10.48550/arXiv.1611.06612
+
+(9) Pizarro, P. N., Hitschfeld, N., Sipiran, I., & Saavedra, J. M. (2022). Automatic floor plan analysis and recognition. Automation in Construction, 140, 104348. https://doi.org/10.1016/j.autcon.2022.104348
+
+(10) Raximov, R., Primova, H., & Ruziyeva, Z. (2021). Methods of recognizing texts in different images. 2021 International Conference on Information Science and Communications Technologies (ICISCT), 1–4. https://doi.org/10.1109/icisct52966.2021.9670316
+
+(11) Sarroca, P. G., & Sánchez-Artigas, M. (2023, May). On Data Processing through the Lenses of S3 Object Lambda. In IEEE INFOCOM 2023-IEEE Conference on Computer Communications (pp. 1-10). IEEE. https://doi.org/10.1109/INFOCOM53939.2023.10228890
+
+(12) Song, W., Abyaneh, M. M., A Shabani, M. A., & Furukawa, Y. (2022). Vectorizing Building Blueprints. In Proceedings of the Asian Conference on Computer Vision (pp. 1044-1059). https://openaccess.thecvf.com/content/ACCV2022/html/Song_Vectorizing_Building_Blueprints_ACCV_2022_paper.html
+
+(13) U.S. Bureau of Labor Statistics. (2025, January 2). Industries at a glance: Construction: NAICS 23. U.S. Bureau of Labor Statistics. https://www.bls.gov/iag/tgs/iag23.htm
+
+(14) Voulodimos, A., Doulamis N., Doulamis A., & Protopapadakis E. (2018). Deep Learning for Computer Vision: A Brief Review. Computational Intelligence and Neuroscience, 2018, 1-13 https://onlinelibrary.wiley.com/doi/full/10.1155/2018/7068349
+
+(15) Wang, G., Luo, P., Lin, L., & Wang, X. (2017). Learning object interactions and descriptions for semantic image segmentation. In Proceedings of the IEEE conference on computer vision and pattern recognition (pp. 5859-5867). https://doi.org/10.1109/CVPR.2017.556
+
+(16) Wang, Q., & Kim, M. K. (2019). Applications of 3D point cloud data in the construction industry: A fifteen-year review from 2004 to 2018. Advanced engineering informatics, 39, 306-319. https://doi.org/10.1016/j.aei.2019.02.007
+
 
 ## Appendix A: Project Management
 ### A.1 Team Agreement
@@ -318,7 +369,13 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 - Add export functionality (download reports of labeled blueprints).
 
 ### A.4 Software Development Artifacts
+
+#### Team Reports:
+[Click here to view our team retrospectives and weekly reports](/team_report/)
+
 #### Product Backlog:
+The product backlog will ba added to and tweaked as we complete our sprints
+
 **Sprint 1**
 
 |  Id  | User Story                                                | Assigned to         | Points    |
@@ -365,6 +422,7 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 | 122  | Develop test bed of potential input for algorithm                    | Michael             |    3    |
 
 **Sprint 4**
+
 |  Id  | User Story                                                           | Assigned to         | Points  |
 | ---- | -------------------------------------------------------------------- |-------------------- | ------- |
 | 112  | Hover over blueprint to get summarized data                          | Emmie               |    2    | 
@@ -372,13 +430,14 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 | 119  | File sharing between users                                           | Emmie               |    3    | 
 | 121  | Steel provider provisioning users                                    | ??                  |    ?    |        
 
-
 ### A.5 Budget
 As of the current phase of the project we project that we will only need a budget to pay for AWS Cloud Computing services. The specific services that we will be using are:
 
 - **S3 Bucket** - cloud file storage and hosting of website
-- **EC2** - API server for backend
 - **Lambda Function** - running the algorithm for converting pdf to csv files of data
-- **Pipeline** - CI/CD
+- **Amplify** - CI/CD
+
+Below is an image of our current AWS Cost Breakdown
+![AWS Cost Breakdown](images/AWS_Cost_Breakdown.png)
 
 This may change in the future as we discover more requirements or when we move to more advanced stages of the project.
