@@ -1,6 +1,9 @@
 * [Getting Started](/application/)
 * [Codebase](/application/codebase/)
     * [Main+App.jsx](/application/codebase/main+App.md)
+    * [Layouts/](/application/codebase/layouts.md)
+    * [Pages/](/application/codebase/pages.md)
+    * [Components/](/application/codebase/components.md)
 
 * [Local Hosting](/application/local_hosting.md)
     * [Setup Amplify Locally](application/local_hosting?id=setup-aws-amplify-locally)
