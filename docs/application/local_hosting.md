@@ -54,7 +54,7 @@ If done correctly should take 3-4 minutes to run and you should see the followin
 File written: amplify_outputs.json
 ```
 
-Then just run the front end application like normal with `npx vite`.
+Then just run the front end application like normal with `npm run dev`.
 
 Remember to run the sandbox start up command (`npx ampx sandbox --profile default`) when testing locally.
 
@@ -80,4 +80,9 @@ Lastly, paste the following code within the first `Statement` section:
 Your Bucket Policy should look like the following iamge
 
 ![S3 Bucket Access Permissions](images/bucket_access_permissions.png)
+
+Then below the Bucket Policy, there is a Cross-origin resource sharing (CORS) that we have to edit and add `"x-amz-meta-name"` to.
+This will allow our application to receive the name of the pdfs
+
+![S3 Bucket CORS changes](images/bucket_cors_policy.png)
 
