@@ -1,23 +1,30 @@
 # Frontend Documentation
-Welcome to the Frontend section of HardHatRaccoon Documentation.
 
-To get started, clone the repository by running
+## How to Run
+
+1. To get started, clone the repository by running
 
 ```bash
 git clone git@github.com:HardHatRacoons/rustle-rustle-react.git
 ```
 
-Then install all of the dependencies with:
+2. Then install all of the dependencies with:
 
 ```bash
 npm i
 ```
 
-Lastly, run the website locally with:
+3. Follow instructions from [Local Hosting Docs](/application/local_hosting.md) to set up AWS Amplify resources locally.
+
+4. Lastly, run the website locally with:
 
 ```bash
-npx vite
+npm run dev
 ```
+
+5. The application should be accessible at `http://localhost:4321` by default.
+
+---
 
 ## The Tech Stack
 ### Main Tools
