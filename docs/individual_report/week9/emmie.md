@@ -49,7 +49,6 @@ Stella for being the sole soldier working at 2am over spring break.
 
 *What are you going to work on this week?*
 
-- Option to delete files from storage on Gallery
 - Thumbnail image for the file cards displayed in Gallery
-- Document current state of front end
-- Convert current capstone report and documents to documentation
+- Write test cases
+- Help with search bar
