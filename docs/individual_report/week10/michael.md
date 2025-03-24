@@ -10,34 +10,34 @@
 
 | Task                              | Status    | Time Spent | 
 | --------------------------------- | --------- | ---------- |
-| R-tree implementation | Complete | 3 Hours |
-|                                   |           |            |
-|                                   |           |            |
+| Rewrite of DBSCAN algo | Complete | 2 Hour |
+| Parallel Processing of pages | Complete | 3 Hours |
+| Padding of convex hull | Complete | 2 Hour |
+| JSON output of cluster boundries | Complete | 1 Hour |
+| CI/CD tests coverage report on Github Actions | Complete | 1 Hour |
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
-![rtree](https://media.geeksforgeeks.org/wp-content/uploads/20190412142437/R-tree.png)
+![backend_coverage](./images/backend_coverage.png)
+![predictions json output](./images/predictions_json.png)
 
 ### What problems did you run into? What is your plan for them?
-Finding time to work on project during break, especially since my laptop is 💩 and makes it hard to do work on the go. 
-SO I bought a new laptop.
+Multi Processing worked a bit jank on Windows compared to linux. We found a fix but have to keep an eye out on this when porting to the lambda function.
+The algorithm can take a while when pages have excess shading, I have an idea on how to filter out colored shading in pdfs.
 
 ### What is the current overall project status from your perspective? 
-We are on track
-
+We are on track. It is mostly piecing together the frontend, our algorithm, and vector team's algorithm.
 
 ### How is your team functioning from your perspective?
 Team is working well together.
 
-
 ### What new ideas did you have or skills did you develop this week?
-I now kinda know what an r tree is.
-
+I now know how to have python coverage reports with GitHub Actions, and do parallel processing in Python.
 
 ### Who was your most awesome team member this week and why?
-Stella for getting work done during spring break.
+Lucy for making cool graphs.
 
 ## Plans for Next Week
 
 *What are you going to work on this week?*
-Profiling algorithm.
-Add padding to Convex Hull.
+Handle colored shading in pdfs.
+Migrate the algorithm to a lambda function to integrate with frontend.
