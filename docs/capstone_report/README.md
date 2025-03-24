@@ -4,13 +4,13 @@ Devs: Chris Kelley, Michael McCarthy, Emmie Teng, Stella Yang, Lucy Zhang
 
 ## Introduction
 
-The construction industry accounted for over 8 million jobs in 2024, according to the US Bureau of Labor Statistics (13). Vector Intelligence is partnered with the steel industry to create a software that helps the end users estimate their projected material cost from a vectorized construction blueprint. This allows for end users to spend only a few minutes to gain specifications and insights about a project instead of spending days to get the same information manually. The initial success rate of the software in automatically generating specifications from a construction blueprint is 75% and our job will be to enhance that algorithm while wrapping all of the information into a more user friendly interface.
+The construction industry accounted for over 8 million jobs in 2024, making it one of the largest employment sectors in the U.S. economy (U.S. Bureau of Labor Statistics, 2025). Vector Intelligence has partnered with stakeholders in the steel industry to develop software that enables end users to estimate projected material costs directly from vectorized construction blueprints. This advancement allows users to gain essential specifications and insights about a project within minutes—compared to the days it would typically take to analyze blueprints manually. The initial success rate of the software in automatically generating specifications from construction blueprints is 75%. Our task is to enhance this algorithm and integrate it into a more user-friendly interface.
 
 ### 1.1 Case Scenarios
 
 #### Construction Supply
 
-John owns a construction supply company that provides steel beams, concrete, and other materials. He frequently receives bulk orders from contractors and engineers but struggles to predict material demand accurately.
+John owns a construction supply company that provides steel beams, concrete, and other materials. He frequently receives bulk orders from contractors and engineers but struggles to predict material demand accurately. 
 One day, a contractor using the Blueprint Analysis System reaches out with an automated material list generated from a newly analyzed blueprint. The system provides detailed insights, including:
 
 - Exact quantities of beams, columns, and concrete needed
@@ -68,7 +68,7 @@ The largest stretch goal of the project is 3D modelling, as it was originally pi
 
 ## 3 Requirements
 
-The requirements section focuses on user stories and identifying a success criteria. The user stories go over the need for an accessible, user-friendly interface for various stakeholders. The success criteria involve improving the blueprint reading algorithm and creating the user interface to present the results.
+The requirements for this project focus on building an accessible, user-friendly web application that parses vector-format construction blueprint PDFs to automatically identify, label, and annotate steel beams and columns. The system should generate a material specification report with dimensions, weights, and estimated costs, and support exporting the annotated PDF. The user interface must be intuitive and include accessibility features such as text scaling, high contrast modes, dyslexia-friendly fonts, screen reader compatibility, and light/dark mode toggling. It should also be mobile responsive, support multiple devices and viewports, and remain compatible with major browsers like Chrome, Firefox, and Edge. Additional features include toggleable annotation layers, zoom functionality, session-based blueprint viewing, and a dashboard summarizing extracted data. These requirements aim to enhance automation accuracy, streamline the user experience, and improve overall accessibility for a diverse user base.
 
 ### 3.1 User Stories and Usage Scenarios
 
@@ -521,12 +521,7 @@ _Figure A.4.3 Sprint 3 Burndown Chart_
 
 **Sprint 4**
 
-| Id  | User Story                                  | Assigned to | Points |
-| --- | ------------------------------------------- | ----------- | ------ |
-| 112 | Hover over blueprint to get summarized data | Emmie       | 2      |
-| 116 | Integrate algorithm to run with the app     | Michael     | 3      |
-| 119 | File sharing between users                  | Emmie       | 3      |
-| 121 | Steel provider provisioning users           | ??          | ?      |
+Currently in setup phase
 
 ### A.5 Budget
 
@@ -539,4 +534,6 @@ As of the current phase of the project we project that we will only need a budge
 Below is an image of our current AWS Cost Breakdown
 ![AWS Cost Breakdown](images/AWS_Cost_Breakdown.png)
 
-This may change in the future as we discover more requirements or when we move to more advanced stages of the project.
+_Figure A.5.1 AWS Cost Breakdown_
+
+Accoreding to Figure A.5.1, we are currently only spending a very little amount of money for our AWS S3 buckets. This may change in the future as we discover more requirements or when the scale of our production increases.
