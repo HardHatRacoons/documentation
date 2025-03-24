@@ -15,7 +15,7 @@
 |                                     |             |            |
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
-
+![Updated example of an annotated page](./images/chris-page-example.png)
 
 ### What problems did you run into? What is your plan for them?
 I didn't run into any problems that we didn't solve in this sprint. The only problem I ran into was the length of runtime, but Michael managed to fix this by reducing our runtime to 10 seconds.
