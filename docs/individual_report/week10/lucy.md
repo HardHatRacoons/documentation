@@ -10,17 +10,15 @@
 
 | Task                              | Status    | Time Spent | 
 | --------------------------------- | --------- | ---------- |
-|  Putting csv data into table view   | done | 2 |
-|  testing table view | done (100%) | 2 |
+|  making initial graphs   | done | 4 |
+|  testing graphs | done (100%) | 1.5 |
 |                                   |           |            |
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
-![coverage metrics](./images/lucy-test.png)
-![display of table view](./images/lucy-display.png)
+![picture of graphs shown](./images/lucy-graph.png)
 
 ### What problems did you run into? What is your plan for them?
-My environment wasn't working properly and we found out after intensive debugging it was due to me installing the windows version of aws sandbox instead of the linux version.
-
+I was having difficulty generating the graphs because the documentation feels sparse. However, I was able to figure it out. Some of the tests were also annoying to write, but I eventually got them done and Stella helped.
 
 ### What is the current overall project status from your perspective? 
 I think we are on track.
@@ -31,14 +29,13 @@ The team is functioning well.
 
 
 ### What new ideas did you have or skills did you develop this week?
-I used aggrid and worked on my csv/json processing skills.
+I used d3 to generate graphs for the first time! It was pretty cool.
 
 
 ### Who was your most awesome team member this week and why?
-My most awesome team members were Stella and Emmie, because they helped me debug my environment.
-
+My most awesome team member was Stella; she was super busy this week but still helped me a little with testing and set up a large part of the presentations.
 
 ## Plans for Next Week
 
 *What are you going to work on this week?*
-I am going to add graphs and test them.
+I will help make the frontend prettier and assist with anything else as needed.
