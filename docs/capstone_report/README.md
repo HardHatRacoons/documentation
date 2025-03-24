@@ -359,13 +359,18 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 
 ### A.4 Software Development Artifacts
 
-#### Team Reports:
+#### **Team Reports**:
 [Click here to view our team retrospectives and weekly reports](/team_report/)
 
-#### Product Backlog:
+#### **Product Backlog**:
+
 The product backlog will ba added to and tweaked as we complete our sprints
 
 **Sprint 1**
+
+![Sprint 1 Burndown Chart](images/Sprint1_Burndown.png)
+
+*Figure A.4.1 Sprint 1 Burndown Chart*
 
 |  Id  | User Story                                                | Assigned to         | Points    |
 | ---- | --------------------------------------------------------- |-------------------- | --------- |
@@ -377,6 +382,10 @@ The product backlog will ba added to and tweaked as we complete our sprints
 |  9   | View Annotated PDF on web app                             | Lucy                |     3     |
 
 **Sprint 2**
+
+![Sprint 2 Burndown Chart](images/Sprint2_Burndown.png)
+
+*Figure A.4.2 Sprint 2 Burndown Chart*
 
 |  Id  | User Story                                                           | Assigned to         | Points  |
 | ---- | -------------------------------------------------------------------- |-------------------- | ------- |
@@ -392,19 +401,23 @@ The product backlog will ba added to and tweaked as we complete our sprints
 
 **Sprint 3**
 
+![Sprint 3 Burndown Chart](images/Sprint3_Burndown.png)
+
+*Figure A.4.3 Sprint 3 Burndown Chart*
+
 |  Id  | User Story                                                           | Assigned to         | Points  |
 | ---- | -------------------------------------------------------------------- |-------------------- | ------- |
 |  54  | Display title in a gallery for blueprint files                       | Emmie               |    2    | 
 |  95  | Delete file button                                                   | Emmie               |    1    | 
-|  86  | Display thumbnail on blueprint files                                 | Emmie               |    3    |
+|  96  | Display thumbnail on blueprint files                                 | Emmie               |    5    |
 |  99  | Profile and analyze clustering performance                           | Chris & Michael     |    2    | 
 | 100  | Reduce clustering algorithmn run time                                | Michael             |    5    |
 | 101  | Identify edge cases for page identification                          | Chris               |    2    | 
 | 102  | Identify edge cases for clustering identification                    | Chris               |    5    | 
 | 103  | Padding the convex hull identification                               | Michael             |    1    | 
-| 104  | Populate tables with CSV                                             | Lucy                |    1    | 
+| 104  | Populate tables with CSV                                             | Lucy                |    3    | 
 | 105  | Button to download PDFs                                              | Stella              |    1    | 
-| 106  | Status display of completion of annotation                           | Stella              |    1    | 
+| 106  | Status display of completion of annotation                           | Stella              |    3    | 
 | 111  | Search bar by name feature for blueprint file                        | Stella              |    2    |
 | 117  | Initialize metric view graphs                                        | Lucy                |    2    | 
 | 118  | Error message for file you don't own                                 | Lucy                |    1    | 
