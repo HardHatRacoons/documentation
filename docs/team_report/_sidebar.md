@@ -6,3 +6,5 @@
 * [Week 8 Report](/team_report/week8.md)
 * [Sprint 2 - Retrospective](/team_report/sprint2_retrospective.md)
 * [Week 9 Report](/team_report/week9.md)
+* [Week 10 Report](/team_report/week10.md)
+* [Sprint 3 - Retrospective](/team_report/sprint3_retrospective.md)
