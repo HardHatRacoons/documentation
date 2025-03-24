@@ -89,7 +89,32 @@ The requirements section focuses on user stories and identifying a success crite
 The process for reading blueprint information has already been completed with a 75% success rate, and our task will be to increase the success rate to 90% through improving their current algorithms and potentially introducing machine learning. The current construction blueprint reader algorithm only works on a specific type of blueprint, and the sponsors would also like to be able to support more types of blueprint formats which is more of a stretch goal. By the end of this project, we aim to have a functional user interface that is simple to navigate and understand for the users. The user interface should have an intuitive way of representing specifications of all the different beams, either horizontal or vertical, within the scanned blueprints. The interface should also make sense to a user who is not familiar with construction. Analysis for success of the User interface will be evaluated through survey results of targeted end users. Lastly, the product should be able to analyze the blueprint to give a list of material specifications as well as the projected project cost within 90% accuracy. 
 
 ## 4 Engineering Standards, Regulations, and Considerations
-TBD
+
+### 4.1 Engineering Standards
+
+To ensure the reliability, compatibility, and maintainability of our blueprint analysis platform, we follow several key engineering standards. For processing and interpreting blueprints, we are mindful of industry standards such as **ASME Y14.41** and **ISO 16792**, which govern the proper representation of digital engineering drawings and ensure our annotation and parsing logic can adapt to common formats. Though our system currently processes PDFs, many of these originate from CAD tools or follow technical documentation conventions, making these standards important references. There is not a guarantee that the files we work with will adhere to any particular format, but looking to the most common and popular standards has provided a good start.
+
+On the software engineering side, we adhere to **RESTful API principles** for backend communication, including standardized HTTP methods, status codes, and resource naming. Coding practices follow widely accepted conventions such as **PEP8** for Python and use **Prettier** to enforce consistent code formatting across our React (JSX) codebase in frontend development, which promote code readability, maintainability, and team collaboration. All code is managed using **git**, following a branching strategy that supports agile development.
+
+For file storage and cloud infrastructure, we use **AWS services** (S3, Lambda, Amplify), and are informed by **ISO/IEC 27001** principles to maintain best practices in securing user data and managing access control. Finally, our user interface follows **WCAG 2.1 accessibility guidelines** to support a broad range of users, ensuring the application is intuitive, accessible, and responsive across devices.
+
+### 4.2 Applicable Regulations
+
+Our platform only handles files that are explicitly uploaded by the user. All processing is done within the scope of what the user expects — primarily the extraction of structural and material-related metadata from blueprint PDFs. To maintain transparency, we will clearly inform users that their uploaded PDFs will be processed by automated algorithms designed to identify and annotate steel-related content. The content of these files remains confidential and is not shared outside of their intended analysis pipeline.
+
+During user studies, no personal information will be collected or required. Participants will be given temporary accounts and pre-selected PDF files to interact with, meaning they will not have to provide their own data or credentials. As such, there is minimal risk involved, and we will comply with standard research ethics guidelines such as those outlined by **Institutional Review Boards (IRBs)** in academic settings. For example, we will follow the **Belmont Report principles** — ensuring respect for persons, beneficence, and justice — by obtaining informed consent, providing clear instructions, and safeguarding participants’ anonymity.
+
+### 4.3 Environmental and Health/Safety Concerns
+
+While our project operates entirely in a digital space, we remain conscious of its environmental footprint. Our annotation and clustering algorithms — particularly those responsible for identifying steel-related pages and regions — have been optimized for both performance and energy efficiency. By reducing the number of unnecessary pages and irrelevant clusters processed, we conserve cloud computing resources and reduce energy consumption, which contributes to a more sustainable software solution.
+
+Regarding health and safety, our platform is designed to be user-friendly and intuitive. The interface is ergonomically structured to minimize cognitive load and visual fatigue, allowing users to quickly upload, browse, and analyze their blueprints without navigating through complex or unnecessary interactions. The clear layout and minimal design help support a comfortable user experience and prevent repetitive stress from prolonged usage.
+
+### 4.4 Ethical, Social, and Political Concerns
+
+From an ethical standpoint, transparency in data handling is a central priority. Users will be informed of how their data is processed, and all uploaded files will be stored securely in cloud storage with appropriate access controls. We do not collect any personal data beyond what is strictly necessary for interacting with the system, and users can trust that their files are treated respectfully and confidentially.
+
+Socially and politically, the project presents no controversial risks or concerns. Our system processes blueprints without regard to origin, content style, or file formatting — there is no discrimination or exclusion in how input data is handled. While the software is currently proprietary and limited to specific clients of a steel provider, it has the potential to benefit a wider community. If open-sourced in the future, it could support a broader range of construction and manufacturing teams by automating tedious manual annotation tasks, thereby increasing efficiency and accessibility. Our platform aims to be both technically robust and socially responsible.
 
 ## 5 Design Exploration
 ### 5.1 Comparison of Potential Solutions
