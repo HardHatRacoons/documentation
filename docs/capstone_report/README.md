@@ -443,22 +443,24 @@ Here's a structured implementation schedule for your CAPSTONE project using 2-we
 #### **Product Backlog**:
 
 Here are the remaining stories currently not assigned to a sprint
-| Id | User Story | Points |
-| --- | ------------------------------------------------------- | ------ |
-| 112 | Hover over a blueprint thumbnail to get summarized data | 2 |
-| 116 | Integrate algorithm to run with app | 3 |
-| 119 | File sharing between users | 3 |
-| 121 | Steel provider provisioning users | 5 |
-| 182 | Admin view of all files available to a group of users | 3 |
-| 183 | Admin mass download all projects | 3 |
-| 184 | Admin mass download select projects | 2 |
-| 185 | Admin add regular users | 2|
-| 186 | Sponsor view of current users given access to the application | 3|
-| 187 | Sponsor view of material demand from blueprints | 5|
-| 188 | Sponsor view dashbaords with graphs and statistics | 3 |
+
+| Id  | User Story                                                    | Points |
+| --- | ------------------------------------------------------------- | ------ |
+| 112 | Hover over a blueprint thumbnail to get summarized data       | 2      |
+| 116 | Integrate algorithm to run with app                           | 3      |
+| 119 | File sharing between users                                    | 3      |
+| 121 | Steel provider provisioning users                             | 5      |
+| 182 | Admin view of all files available to a group of users         | 3      |
+| 183 | Admin mass download all projects                              | 3      |
+| 184 | Admin mass download select projects                           | 2      |
+| 185 | Admin add regular users                                       | 2      |
+| 186 | Sponsor view of current users given access to the application | 3      |
+| 187 | Sponsor view of material demand from blueprints               | 5      |
+| 188 | Sponsor view dashbaords with graphs and statistics            | 3      |
 
 The product burndown chart as of the end of Sprint 3 is as follows
 ![Product burndown chart as of Sprint 3](images/product_burndown.png)
+_Figure A.4.0 Product Burndown Chart_
 
 **Sprint 1**
 
