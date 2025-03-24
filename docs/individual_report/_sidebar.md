@@ -10,3 +10,9 @@
     * [Lucy](/individual_report/week9/lucy.md)
     * [Michael](/individual_report/week9/michael.md)
     * [Stella](/individual_report/week9/stella.md)
+* Week 10
+    * [Chris](/individual_report/week10/chris.md)
+    * [Emmie](/individual_report/week10/emmie.md)
+    * [Lucy](/individual_report/week10/lucy.md)
+    * [Michael](/individual_report/week10/michael.md)
+    * [Stella](/individual_report/week10/stella.md)
