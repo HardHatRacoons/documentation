@@ -8,39 +8,39 @@
 
 ### What did _you_ work on this past week?
 
-| Task                                 | Status    | Time Spent |
-| ------------------------------------ | --------- | ---------- |
-| capstone report ethics and standards | Completed | 2 hr       |
-| Add more tests and increase coverage | Completed | 3 hr       |
-| Search bar                           | Completed | 2 hr       |
+| Task                                  | Status    | Time Spent |
+| ------------------------------------- | --------- | ---------- |
+| capstone report ethics and standards  | Completed | 2 hr       |
+| prepare status demo                   | Completed | 1 hr       |
+| Write user story backlog for sprint 4 | Completed | 2 hr       |
+| Add more tests and increase coverage  | Completed | 3 hr       |
+| Search bar                            | Completed | 2 hr       |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![Search bar](images/stella-download.png)
-![coverage](images/images/CleanShot 2025-03-24 at 15.39.25@2x.png)
+![Search bar](images/stella-search.png)
+![coverage](images/stella-coverage.png)
 
 ### What problems did you run into? What is your plan for them?
 
-Testing has been an absolute nightmare. I spent an unhealthy amount of time figuring out tests to try to crawl to
-unexplored areas of the code base. A lot of things were implemented in the code base in a specific way to satisfy
-the APIs that we are calling and a lot of the testing library and the code interacts is very unexpected and they don't provide feedback.
+I actually did not run into too many issues this week. Everything went smoothly enough.
 
 ### What is the current overall project status from your perspective?
 
-I think we are doing good still, but I think we should be working on making new features. Instead of doing more chores. We are already delivering what the sponsor wants, but I think we should start lofi sketching the other views and implement them.
+I have the same sentiment as last week: I think we are doing good still, but I think we should be working on making new features.
 
 ### How is your team functioning from your perspective?
 
-I think we all felt steam running out from the whole team and the team slowed down in progress. But I believe we will pick it back up this week.
+We were a lot more productive and this is the only sprint that we did not successfully finish all of the user stories that we were intending. We have been very productive and will continue to be productive, though I feel like we are collectively slightly fatigued by being troubled by the various aspects that we are trying to integrate together.
 
 ### What new ideas did you have or skills did you develop this week?
 
-I learned a lot more about vitest testing and using the mocking library, as well as interacting with async js in testing environment.
+I learned more about what goes behind a search bar and it was a lot simpler than I expected it to be. It made a lot of sense but I didn't think of the solution before starting to work on it.
 
 ### Who was your most awesome team member this week and why?
 
-Lucy fixed the test that I was struggling on and it's finally working now.
+Michael and Chris got the run time for the bounding box algorithm down to 10s for a very big PDF. 
 
 ## Plans for Next Week
 
 _What are you going to work on this week?_
-I will be working on implementing the search function on the home page as well as trying to again cover all lines in our test coverage.
+I want to explore what other features we can build for our project to be "capstone-worthy" and 
