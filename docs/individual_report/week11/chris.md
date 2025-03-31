@@ -30,11 +30,11 @@ We are working well together.
 
 
 ### What new ideas did you have or skills did you develop this week?
-One idea I had this week was a way to reduce text pages and remove them from being annotated. I did this by calculating what percentage of the page was covered by text boxes.
+Pairing each beam with a line on the page should reduce the number of errors overall.
 
 
 ### Who was your most awesome team member this week and why?
-Michael with his impressive work in reducing the algorthm runtime.
+Michael for his work on the lambda function and finding out a way to deal with that.
 
 
 ## Plans for Next Week
