@@ -10,15 +10,15 @@
 
 | Task                                | Status      | Time Spent | 
 | ----------------------------------- | ----------- | ---------- |
-| Page Identification Edge Cases      | Complete | 4 hrs     |
-| Cluster Identification Edge Cases   | Complete | 2 hrs    |
+| Identification of individual beams     | In progress | 4 hrs     |
+| Capstone Report Evaluation Plan  | Complete | 1 hrs    |
 |                                     |             |            |
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
-![Updated example of an annotated page](./images/chris-page-example.png)
+![Updated example of an annotated page](./images/chris-week-11.png)
 
 ### What problems did you run into? What is your plan for them?
-I didn't run into any problems that we didn't solve in this sprint. The only problem I ran into was the length of runtime, but Michael managed to fix this by reducing our runtime to 10 seconds.
+We are currently working on a temporary solution to replace the sponsor's algorithms as they haven't showed any steps in sharing their algorithm with us, so I attempted to highlight individual beams this week. It is also not standardized, so I am aiming to create a way that pairs each steel beam (ex. "W10X22") with an actual line on the blueprint. However, the words aren't always placed on top of where they should go, and it is sometimes hard to even point out which beam goes where visually. My solution to this is to use nearest beam along with tweaking some values to make sure it ignores any beams that aren't necessary.
 
 
 ### What is the current overall project status from your perspective? 
