@@ -223,7 +223,77 @@ Our data will be stored using S3 Buckets in AWS. There are a few major data stru
 
 ## 7 Evaluation
 
-TBD
+The two main goals of the project is to deliver a friendly user interface to users and improve the steel blueprint algorithm, which is supported by the evaluation plan.  The frontend has unit and integration tests. The goal of the frontend is to achieve 100% test coverage of all functions, branches, and lines. This way, the team can ensure that in all scenarios, the user interface behaves as expected. The integration tests allow the team to mimic user behaviors and evaluate correctness of overarching subjects in the web app such as navigation and authentication flow. The unit tests test each component for correctness and ensure under error states the application does not crash. The backend has unit tests and performance benchmarks. The overall goal of the algorithm is 70-80% accuracy running under 15 minutes. This allows the team to ensure that the behavior of the algorithm is “correct”, track the progression of the development of the algorithm, and identify weak sections of the algorithm in need of improvement. This allows the team to make valuable improvements and efficiently develop.
+
+The usability evaluation is in the format of a survey that testers will take after completing a series of tasks. The questions are filled out on a scale of 1-5, so that there is a quantifiable result from the survey questions. The form also includes a free response suggestions box in case there are any thoughts that the questions do not cover. This allows the team to evaluate how the user interface performs with little to no instruction, mimicking the real world scenario in which it will be deployed. This allows the team to identify any points of concern or correction within the interface and ensure a friendly interface and performance.
+
+### 7.1 Functionality Evaluation
+Since our definition of success is an improvement of the accuracy of our sponsor’s algorithm, our overarching testing goals are to compare and contrast the output of our system to the output of the sponsor’s algorithm. For the front-end, our overarching goal is to create an easy to use and navigate, even for people who aren’t familiar with construction.
+
+#### 7.1.1 Evaluation Procedures
+For both front-end and back-end, we will include unit testing and integration testing. For back-end, we also will add performance testing, since the algorithm takes longer depending on certain factors like the size of pdfs. 
+Unit testing will be done whenever a new function is added and should be added to the corresponding test file, which is automatically run when attempting to make a pull request or manually by terminal. Unit testing will be measured based on the line coverage of the tests, and the expected results should be a percentage of the total code covered by the tests. Unit testing will support our definition of success by making sure that there are no tiny errors in our code, thus improving the overall accuracy. Our unit testing goal is to get to 100% coverage for our code. 
+
+Integration testing will be done similar to unit testing, whenever a new component is added. Integration testing will also be done automatically when attempting to make a pull request or manually by terminal. Integration testing will also be measured based on the line coverage of the tests, and the expected result will still be a percentage of the total code covered by tests. Integration testing will support our definition of success by making sure each component works with any other component to ensure that there are no conflicts between components which could reduce our overall accuracy. Since our integration testing will be done at the same time as unit testing, we also want 100% coverage for integration testing.
+
+Performance testing will be done whenever the algorithm for annotating pdfs is finalized. We will create a test bed that is able to create example pdfs of different lengths, sizes, and amount of lines per page. We will measure the time it takes our algorithm to annotate these example pdfs relative to the size and length of the pdfs. We will manually run our algorithm on many different pdfs to see if it can run in reasonable times (<15 mins) on pdfs of normal size in the construction industry (<2GB). The expected result should be a time less than 15 minutes, even on larger pdfs. These results will support our definition of success by making sure our algorithm is actually usable in the real world. Our system will be adequately tested when there are no pdfs of reasonable size that take longer than 15 minutes to annotate.
+
+System testing will be done at the end of the project, when we integrate our front-end and back-end together. We will measure the overall accuracy of our system by manually inputting some example pdfs and comparing the actual known value of the total weight to the output of the total weight given by our algorithm. Since our definition of success is a 90% accurate algorithm, the expected result should be a total weight within 10% of the actual weight. Our system will be adequately tested if we get >90% accuracy on all the test pdfs we were given.
+
+#### 7.1.2 Evaluation Results and Discussion
+Your evaluation results and a discussion of them goes here.
+
+### 7.2 Usability Evaluation
+The observational study is designed to evaluate the user experience of a web application used for viewing and managing blueprint files. The evaluation will be conducted by providing participants with several blueprint files and access to the web application, which will already contain some files for immediate access. Participants will be observed performing a series of tasks, and various aspects of their interaction with the application will be recorded.
+
+During these tasks, the observer will record the time taken to complete each task, note interactions with the software, and capture users' thoughts and comments. After completing the tasks, users will be asked to fill out a survey to gather additional feedback on their experienceA remote survey will also be distributed to extend the evaluation reach, allowing insights from users who may not be directly observed.
+The combination of direct observation and remote survey methods will provide a comprehensive understanding of the software’s usability, identifying strengths, and areas for improvement based on real user interactions and perceptions. 
+
+#### 7.2.1 Evaluation Procedures
+
+##### Observational study
+Provide several blueprint files as well as the web application of the project. The web application will already have some files available and ready to view. Instruct users to do all of the following actions and record the amount of time it took them to complete said action. Also record down notes about their interactions with the software as well as thoughts and comments during usage. Lastly, ask them to complete the survey down below.
+
+1. Login to the software
+1. Change the current view to light/dark mode
+1. Upload a file of their choice
+1. Find that file in the long list of already existing files
+1. Click into the file and view the available information
+1. Ask to acquire files that are not available yet
+Download the annotated PDF and data file of a given file name that is already there
+1. View the graphs and tables and sort by category
+
+##### Remote Survey
+Send a link to a web app, send a survey link (g0ogle forms), review the results.
+
+**Survey Qs:**
+1. Are you Color Blind?
+  - Yes, no
+2. Do you have any prior experience with using  softwares related to blueprints and/or construction?
+  - Yes, no
+3. How easy was it to sign in? 
+  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+4. How easy was it to upload a file?
+  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+5. How easy was it to view your annotated file?
+  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+6. How distinguishable were each file you uploaded?
+  - Scale 1 - 5 (1 - can't tell what is what, 5 - easily see which file is which)
+7. How easy was it to navigate between pages?
+  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+8. How easy was it to read the data/graphs?
+  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+9. Were the colors pleasing to look at? (If you are color blind, are they distinguishable?)
+  - Yes, no
+10. What was your favorite feature?
+  - Short answer
+11. What was your least favorite feature?
+  - Short answer
+12. Any suggestions for improvements or comments?
+  - Long form
+
+#### 7.2.2 Evaluation Results and Discussion
+Your evaluation results and a discussion of them goes here.
 
 ## 8 Discussion
 
