@@ -251,7 +251,8 @@ The combination of direct observation and remote survey methods will provide a c
 
 #### 7.2.1 Evaluation Procedures
 
-##### Observational study
+**Observational study**
+
 Provide several blueprint files as well as the web application of the project. The web application will already have some files available and ready to view. Instruct users to do all of the following actions and record the amount of time it took them to complete said action. Also record down notes about their interactions with the software as well as thoughts and comments during usage. Lastly, ask them to complete the survey down below.
 
 1. Login to the software
@@ -260,11 +261,12 @@ Provide several blueprint files as well as the web application of the project. T
 1. Find that file in the long list of already existing files
 1. Click into the file and view the available information
 1. Ask to acquire files that are not available yet
-Download the annotated PDF and data file of a given file name that is already there
+1. Download the annotated PDF and data file of a given file name that is already there
 1. View the graphs and tables and sort by category
 
-##### Remote Survey
-Send a link to a web app, send a survey link (g0ogle forms), review the results.
+**Remote Survey**
+
+Send a link to a web app, send a survey link (google forms), review the results.
 
 **Survey Qs:**
 1. Are you Color Blind?
