@@ -12,6 +12,7 @@
 ### List the team’s accomplishments.
 - Algorithm Profiling
 - Integrated algorithm to run with app
+- Algorithm API
 - Handled pdfs with excess shading
 - Improved coverage for backend tests
 - Mocked solution of sponsor algorithm 
