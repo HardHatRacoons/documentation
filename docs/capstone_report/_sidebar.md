@@ -33,3 +33,5 @@
   * [A.3 Implementation Schedule](capstone_report/?id=a3-implementation-schedule)
   * [A.4 Software Development Artifacts](capstone_report/?id=a4-software-development-artifacts)
   * [A.5 Budget](capstone_report/?id=a5-budget)
+* [Appendix B: Implementation Details](capstone_report/?id=appendix-b-implementation-details)
+* [Appendix C: User’s Manual](capstone_report/?id=appendix-c-user39s-manual)

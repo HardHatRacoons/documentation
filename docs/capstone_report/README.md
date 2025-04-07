@@ -231,7 +231,8 @@ The usability evaluation is in the format of a survey that testers will take aft
 Since our definition of success is an improvement of the accuracy of our sponsor’s algorithm, our overarching testing goals are to compare and contrast the output of our system to the output of the sponsor’s algorithm. For the front-end, our overarching goal is to create an easy to use and navigate, even for people who aren’t familiar with construction.
 
 #### 7.1.1 Evaluation Procedures
-For both front-end and back-end, we will include unit testing and integration testing. For back-end, we also will add performance testing, since the algorithm takes longer depending on certain factors like the size of pdfs. 
+For both front-end and back-end, we will include unit testing and integration testing. For back-end, we also will add performance testing, since the algorithm takes longer depending on certain factors like the size of pdfs. Code consistency and standards are enforced with prettier configurations.
+
 Unit testing will be done whenever a new function is added and should be added to the corresponding test file, which is automatically run when attempting to make a pull request or manually by terminal. Unit testing will be measured based on the line coverage of the tests, and the expected results should be a percentage of the total code covered by the tests. Unit testing will support our definition of success by making sure that there are no tiny errors in our code, thus improving the overall accuracy. Our unit testing goal is to get to 100% coverage for our code. 
 
 Integration testing will be done similar to unit testing, whenever a new component is added. Integration testing will also be done automatically when attempting to make a pull request or manually by terminal. Integration testing will also be measured based on the line coverage of the tests, and the expected result will still be a percentage of the total code covered by tests. Integration testing will support our definition of success by making sure each component works with any other component to ensure that there are no conflicts between components which could reduce our overall accuracy. Since our integration testing will be done at the same time as unit testing, we also want 100% coverage for integration testing.
@@ -609,3 +610,95 @@ Below is an image of our current AWS Cost Breakdown
 _Figure A.5.1 AWS Cost Breakdown_
 
 Accoreding to Figure A.5.1, we are currently only spending a very little amount of money for our AWS S3 buckets. This may change in the future as we discover more requirements or when the scale of our production increases.
+
+## Appendix B: Implementation Details
+
+The project is split into two sections, the frontend (web application) and backend (algorithmic component).  The project is hosted on AWS Amplify and AWS Elastic Beanstalk.
+
+![System Diagram](images/Level_0_Diagram.png)
+_Figure B.1: System Diagram_
+
+The frontend tech stack is as follows:
+
+The main tools of the frontend:
+
+* ReactJS: React JS is the main tool used for building the dynamic graphical user interface. It is used widely in industry. 
+* Vite: Vite is the build tool/development server used to serve react code. It is highly efficient and offers a variety of useful features.
+* TailwindCSS: TailwindCSS is a fast and easy-to-use css styling tool to speed up development and ensure style consistency.
+* AWS Amplify: Amplify is used to host the frontend and enable easy communication with AWS resources such as the S3 buckets and authentication.
+
+The supplementary libraries:
+
+* React-router: React router is used for relatively lightweight client side routing that doesn't require full page reloads.
+* React-icons: React icons were used for styling the web app with premade icon (svg) libraries.
+* PDFJS-dist: This is a pdf.js distribution used to load, parse, and render pdfs in the browser.
+* AG-Grid: AGGrid is a powerful tool for rendering large and complex data sets in a grid. It is used for rendering a large amount of steel structure data in a table with additional functionality (sorting, filtering, pagination).
+* D3: D3 is a lightweight JS data visualization tool. It is used to create, process, and graph json data about the steel beams.
+* Aws-amplify: AWS amplify provides deployment support and custom components for authentication and interfacing with the storage system.
+
+The testing libraries:
+
+* React Testing Library (RTL): RTL is used to write test code for the react app to make sure behavior stays consistent and expected. It closely mimics user interactions in testing.
+* Vitest: Vitest is used as a test runner and coverage reporter.  It provides mocking support as well.
+* Github Actions: Github actions is used to automate test running on push and pull request.
+
+The web application consists of two main primary views, with three other subviews and a sign-in view. Authentication locks all pages such that if the user is not signed in, they can only access the sign-in view. After signing in, the user is then taken to the home page, which consists of a gallery that displays all pdfs currently uploaded to the user’s account. Here, a user can also upload a new document (pdf). Upon clicking an uploaded document, the user is taken to the next view, the file view. This view has 3 separate tabs (subviews) consisting of the pdf blueprint view, the table view, and the metrics view. The pdf blueprint view displays one page of the selected pdf and allows the user to move between pages to view the whole pdf. It also contains buttons allowing users to download the annotated pdf, original document, or related csv of parsed data. The table view contains a table of all of the parsed beam data from the pdf. It allows filtering and searching. The metric view contains pertinent graphs of the data, such as total combined weight of steel beams of X type.
+
+|  |  |
+|-----------------|-----------------|
+| ![Sign-in page](images/SignIn_Page.png) _Figure B.2: Sign in View_ | ![Home page](images/Home_Page.png)_Figure B.3: Home View_ |
+| ![Pdf blueprint page](images/PDF_Blueprint_Page.png) _Figure B.4 Pdf Blueprint View_ | ![Table page](images/Table_Page.png) _Figure B.5 Table View_ |
+| ![Metrics page](images/Metrics_Page.png) _Figure B.6 Metric View_ |  |
+
+The backend tech stack is as follows:
+
+Tools of the backend:
+
+* Flask: Flask is used to serve our API routes so the frontend can communicate with our backend python code.
+* PyMuPDF: PyMuPDF is the pdf parsing library we are using to extract information from and annotate the pdfs that users submit.
+* Scipy, NumPy, r-tree: Various methods from each are  used to streamline and simplify the algorithm code.
+
+Backend testing tools:
+
+* Coverage: Coverage library is used along with the built in unittest module to run unit tests and generate a coverage report.
+* GitHub Actions: GitHub Actions is used to automate the testing processing to run on every pull request.
+
+The backend is contained in three files: utils.py, tests.py, and application.py. Utils.py contains the main algorithm code. The algorithm is a modified version of dbscan that deals with weighted segments to determine steel structures on a construction blueprint. Tests.py contains testing code. Application.py calls utils.py and contains code regarding the api deployment of the parsing algorithm.
+
+![Backend Diagram](images/Level_1_Backend_Diagram.png)
+_Figure B.6: Backend Diagram_
+
+The deployment details are as follows:
+
+Github is used for version control of the frontend and backend. Github actions are set up for both the frontend and the backend to auto-deploy the code as well as run automated test suites. The frontend is deployed on AWS Amplify. AWS Amplify takes care of all the deployment details such as storage partitioning; S3 is used to store pdfs, csvs, and thumbnails. Bucket access is given to authenticated users of the web application. AWS Elastic Beanstalk is used to host and load balance the API. With a POST request, the frontend can specify where in S3 to find a pdf and the program will process and upload an annotated pdf and csv to the S3 bucket.
+
+## Appendix C: User's Manual
+
+Since the web application is fully deployed, users of the project simply needed to navigate to the hosted url, which is https://main.dr2pih1gb78f3.amplifyapp.com/.
+
+Upon reaching the application, users will be greeted with the following login screen.
+
+![Sign-in page](images/SignIn_Page.png)
+_Figure C.1: Sign in View_
+
+If authorized, users may sign in with their google account by pressing the sign-in button in the middle of the screen. Upon successful login, they are taken to the home page, pictured below:
+
+![Home page](images/Home_Page.png)
+_Figure C.2: Home View_
+
+The upload button in the gallery section of the home page allows the user to upload a pdf construction blueprint document. The reload button next to it can be used to refresh the page. The previously uploaded documents are shown below in the gallery section. The search bar can be used to narrow down the uploaded documents to find the one that the user is looking for.
+
+Upon clicking an uploaded document, users are taken to the file views. There are three subviews, the first of which is the pdf blueprint view. Users may choose to return the gallery with the back arrow in the top navbar, where the name of the document is also displayed. The three tabs at the top allow users to navigate between subviews. Users can view one page of the document at a time, controlled by the paginator below the page. Here, users can also choose to download the original document, the annotated pdf, or the csv of the extracted data. It is pictured below:
+
+![Pdf blueprint page](images/PDF_Blueprint_Page.png)
+_Figure C.3 Pdf Blueprint View_
+
+The next subview is the table view, shown below, which shows all the extracted data in a paginated table. The data can be sorted, filtered, and searched based on the column attribute. Multiple columns can be selected at once to sort; multiple rows can also be selected at once.
+
+![Table page](images/Table_Page.png)
+_Figure C.4 Table View_
+
+The last subview is the metrics view, which shows some graphs created from the parsed data. The graphs and metrics in the metric view can be pinned so that they show up first by order of relevance to the user. This can be toggled by simply clicking the card.
+
+![Metrics page](images/Metrics_Page.png)
+_Figure C.5 Metric View_
