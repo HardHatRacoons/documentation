@@ -10,23 +10,24 @@
 
 | Task                              | Status    | Time Spent | 
 | --------------------------------- | --------- | ---------- |
-| Write annotating snippet for Sponsors | Complete | 1 Hour |
-| Migrate algorithm to lambda function | Cancelled | 5 Hours |
+| Algorithm Coverage to 90% | Complete | 3 Hour |
+| Migrate algorithm to Flask API | Complete | 2 Hours |
+| AWS Hosting of API | Complete | 3 Hours |
+| API integration with frontend | Complete | 2 Hours
 
 *Include screenshots/diagrams/figures/etc. to illustrate what you did this past week.*
-![lambda](./images/lambda.png)
+![lambda](./images/michael-api.png)
 
 ### What problems did you run into? What is your plan for them?
-Lambda makes me want to cry. Amplify has a neutered version of lambda that limits what you can do in non javascript/typescipt methots. We will be pivoting to making an API to run our algorithm.
+Initially I planned to call the API in the backend, but AWS lambda issues strike again. But I found that Amplify's frontend component made the API call possible directly in the frontend.
 
 ### What is the current overall project status from your perspective? 
-It will be a bit of a rush to increase test coverage, profile our code, and migrate to an API backend. But it's do-able
-
+There are a couple small things that could be tweaked or improved, but we are otherwise done.
 ### How is your team functioning from your perspective?
 Team is working well together.
 
 ### What new ideas did you have or skills did you develop this week?
-I know have a much better understanding of lambda, its a shame that with that understanding comes the knowledge that it isnt the tool for the job.
+I know elastic beanstalk
 
 ### Who was your most awesome team member this week and why?
 Chris for making a mock version of our Sponsors algorithm.
@@ -34,6 +35,4 @@ Chris for making a mock version of our Sponsors algorithm.
 ## Plans for Next Week
 
 *What are you going to work on this week?*
-Increasing test coverage
-Algorithm Profiling
-Backend API
+Polishing what we have
