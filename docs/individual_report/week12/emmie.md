@@ -10,35 +10,34 @@
 
 | Task                                   | Status      | Time Spent |
 | -------------------------------------- | ----------- | ---------- |
-| Planning user studies                  | Completed   | 1.5        |
-| Help with designing new frontend views | Completed   | 1          |
-| Changing format and theme of Home page | Completed   | 2          |
-| Making Home page mobile friendly       | Completed   | 2          |
-| Flushing out Darkmode for Home page    | Completed   | 2          |
-| Admin View                             | Not Started |            |
+| Blueprint View improvements            | Completed   | 3          |
+| Table View improvements                | Completed   | 1          |
+| Metrics View improvements              | Completed   | 1.5        |
+| Revise report                          | In Progress | 1          |
+| Create User Study survey               | In Progress | 1          |
+| Distribute User Study survey           | Not Started | 0          |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
 
-![New home page in light mode](./images/emmie-new_home.png)
+![New desktop blueprint view in light mode](./images/emmie-light-desktop-bp-view.png)
 
-_Figure 1. New home page in light mode_
+_Figure 1. New desktop blueprint view in light mode_
 
-![New home page in dark mode](./images/emmie-new_home_dark.png)
+![New home page in dark mode](./images/emmie-dark-desktop-bp-view.png)
 
-_Figure 2. New home page in dark mode_
+_Figure 2. New desktop blueprint view in dark mode_
 
-![New home page on mobile](./images/emmie-new_home_mobile.png)
+![New home page on mobile](./images/emmie-mobile-tab.png)
 
-_Figure 3. New home page on mobile_
+_Figure 3. New blueprint view on mobile_
 
 ### What problems did you run into? What is your plan for them?
 
-Lack of motivation at the beginning of the sprint now that we are at the end of the project with not too many tasks left to do.
-I started doing a little bit of work at a time to get back into the groove :>. We did run across an issue with setting up a test deployment on amplify, but we were able to solve it as a team after some time of troubleshooting and following the documentation we left behind for our future selves :D.
+We had limited time for working on the project due to hosting other events and upcoming major exams, so we had to cut out some features that we had planned to implement. We looked at the the product backlog and nuked some features that did not add too much to the user experience such as different user views.
 
 ### What is the current overall project status from your perspective?
 
-We are nearly done with our project, pretty much only thing left is adding in an admin view and having backend be fully integrated in our AWS lambda functions.
+We are done with all our core features and have a nice looking web app that is consistently themed throughout.
 
 ### How is your team functioning from your perspective?
 
@@ -46,22 +45,18 @@ Team functioning great as always! Communication happening daily and everyone fee
 
 ### What new ideas did you have or skills did you develop this week?
 
-- Learned more about color theory and what colors look good together
+- When to accept that nto everything will be done.
 - Sharpened my frontend development skills with giving our site a facelift.
 
 ### Who was your most awesome team member this week and why?
 
-Chris for doing what our sponsors promised us but did not give us!
+Michael for connecting everything together!!
 
 ## Plans for Next Week
 
 _What are you going to work on this week?_
 
-- Continue improving front end elements and making them more mobile friendly
-  - Blueprint View
-  - Metrics View
-  - Table View
-- Revise report according to feedback received in peerceptiv
-- Assist with backend for integrating algorithm to frontend
-- Create User Study survey
+- Finish Creating User Study survey
 - Distribute User Study survey
+- Evaluate product
+- Continue revising Capstone Report
