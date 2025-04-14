@@ -269,6 +269,8 @@ Provide several blueprint files as well as the web application of the project. T
 
 
 ![QR code for usability evaluations](images/usability_eval_qr.png)
+
+
 **Remote Survey**
 
 Send a link to a web app, send a survey link (google forms), review the results.
