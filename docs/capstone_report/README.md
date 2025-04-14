@@ -267,6 +267,8 @@ Provide several blueprint files as well as the web application of the project. T
 1. View the graphs and pin the pie chart
 1. Delete the file that was uploaded by this user
 
+
+![QR code for usability evaluations](images/usability_eval_qr.png)
 **Remote Survey**
 
 Send a link to a web app, send a survey link (google forms), review the results.
