@@ -259,13 +259,13 @@ Provide several blueprint files as well as the web application of the project. T
 1. Login to the software
 1. Change the current view to light/dark mode
 1. Upload a file of their choice
-1. Find that file in the long list of already existing files
-1. Click into the file and view the available information
+1. Open the file that they uploaded and view the available information
 1. Ask to acquire files that are not available yet
-1. Download the annotated PDF and data file of a given file name that is already there
-1. View the graphs and tables and sort by category
-1. Pin a graph of your choosing
-1. Delete the file that was uploaded
+1. Go to sarasota blueprint that has been done processing
+1. Download the annotated PDF or data file
+1. View the tables and sort by category
+1. View the graphs and pin the pie chart
+1. Delete the file that was uploaded by this user
 
 **Remote Survey**
 
