@@ -264,6 +264,8 @@ Provide several blueprint files as well as the web application of the project. T
 1. Ask to acquire files that are not available yet
 1. Download the annotated PDF and data file of a given file name that is already there
 1. View the graphs and tables and sort by category
+1. Pin a graph of your choosing
+1. Delete the file that was uploaded
 
 **Remote Survey**
 
