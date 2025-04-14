@@ -15,7 +15,7 @@
 |      |        |            |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![stickers](images/emmie-stickers.png)
+![stickers](images/emmie-stickers.jpg)
 
 ### What problems did you run into? What is your plan for them?
 I did not run into any problems really. Working on user studies can be hard though because it is difficult to find people to do them.
