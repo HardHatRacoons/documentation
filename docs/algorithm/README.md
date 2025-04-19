@@ -1,152 +1,203 @@
-# Algorithm Documentation
-Welcome to the Algorithm section of HardHatRaccoon Documentation.
 
-```bash
-git clone git@github.com:HardHatRacoons/trash-heap.git
+# 📄 Hard Hat Raccoon Algorithm Documentation
+
+This project is a Flask-based API for processing and annotating steel structure diagrams in PDF format. It uses AWS S3 for file storage and includes a custom geometric analysis and clustering pipeline.
+
+---
+
+## 📁 Files Overview
+
+### `application.py` ✅ (Production)
+Main entry point of the API. Handles incoming HTTP requests, security (API key validation), and asynchronous PDF processing.
+
+### `utils.py` ✅ (Production)
+Contains all geometric computations, pattern recognition, clustering, and PDF annotation logic.
+
+### `tests.py` 🧪 (Development)
+Contains unit tests written with Python's `unittest` framework. Code coverage is measured using `coverage.py`.
+
+### `main.py` ⚙️ (Development)
+Developer tool for running high-level processing logic locally. Uses `sentry_sdk` for profiling and error tracking.
+
+### `vectorize_page.py` 🖼️ (Debugging)
+Generates page-level visualizations to help with debugging and fine-tuning the steel structure detection logic.
+
+---
+
+## 🚀 Endpoints
+
+### `GET /`
+Basic health check.
+
+### `POST /api/v1/pdf-proccessing/request`
+Initiates asynchronous processing of a PDF document uploaded to S3.
+
+#### Request JSON Body
+```json
+{
+  "file_id": "string",
+  "user_id": "string",
+  "bucket_name": "string"
+}
 ```
 
-Then make a virtual environment and download required libraries:
+#### Response
+- `202 Accepted`: Processing started.
+- `401 Unauthorized`: Missing API key.
+- `403 Forbidden`: Invalid API key.
+
+---
+
+## 🔐 API Key Handling
+
+Each request must include a header:
+
+```
+X-API-KEY: your_api_key_here
+```
+
+---
+
+## ⚙️ Background Processing (`process_pdf`)
+
+1. Downloads PDF from `s3://unannotated/{user_id}/{file_id}.pdf`
+2. Uses `utils.get_pdf_bounds` to identify steel structures
+3. Annotates PDF using `utils.draw_bounds`
+4. Uploads results to `s3://annotated/{user_id}/{file_id}.pdf`
+5. Also uploads a CSV report (currently `sample.csv`)
+
+---
+
+## 📦 `utils.py` Functionality
+
+### ➕ Geometry Functions
+- `dot(v, w)`: Dot product
+- `norm(v)`: Vector magnitude
+- `orientation(p1, p2, p3)`: Point orientation (collinear, clockwise, counterclockwise)
+- `distance_point_to_segment(P, A, B)`: Shortest distance between point and line segment
+- `segment_intersection(...)`: Check for intersection
+- `segment_continuous(...)`: Collinearity check
+- `segment_distance(...)`: Closest distance between line segments
+- `segment_distance_wrapper(...)`: Wrapper with bias for collinear segments
+
+### 📄 PDF Page Parsing
+- `find_pages_to_annotate(doc)`: Find relevant pages using text patterns and area threshold
+- `find_steel_on_page(page)`: Extract steel designation strings using regex
+- `polygon_contains_point(hull, x, y)`: Check if point lies within polygon
+
+### 🧠 Clustering
+- `find_neighbors_rtree(...)`: Use R-tree for spatial neighbor lookup
+- `custom_dbscan(...)`: Custom DBSCAN clustering using distance metric and R-tree
+
+### 📐 Convex Hulls
+- `padded_hull(points, padding)`: Computes and expands a convex hull from points
+
+### 📍 High-level PDF Processing
+- `get_pdf_bounds(...)`: Main function to get bounding boxes for all relevant pages
+- `get_page_bounds(...)`: Process one page for annotation
+- `draw_bounds(...)`: Visually annotate and color steel regions in the PDF
+
+---
+
+## 🧪 Testing
+
+- All unit tests are defined in `tests.py`
+- Run tests using:
+  ```bash
+  python -m unittest discover
+  ```
+- Generate a coverage report:
+  ```bash
+  coverage run -m unittest discover
+  coverage report -m
+  ```
+
+---
+
+## 🛠️ Development Utilities
+
+- **`main.py`**: Executes the full PDF analysis pipeline on local/dev machines, with profiling via `sentry_sdk`.
+- **`vectorize_page.py`**: Debug tool to visualize parsed PDF page elements and steel detection clusters.
+
+---
+
+## 📂 Environment Variables
+
+- `API_KEY`: Required for all requests for authentication
+
+---
+
+
+---
+
+## 📦 Getting Started
+
+### 1. Set Up the Virtual Environment
 
 ```bash
 python -m venv venv
+
+# Activate environment
+# On Linux/macOS:
 source venv/bin/activate
+
+# On Windows:
+venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
+### 2. Run Tests & Coverage
 
-# utils.py Documentation
+```bash
+# Run all tests
+coverage run -m unittest discover
 
-## `dot(v, w)`
-Computes the dot product of two 2D vectors.
+# See coverage summary in terminal
+coverage report
 
-**Parameters:**
-- `v` (tuple or list of float): First 2D vector.
-- `w` (tuple or list of float): Second 2D vector.
+# Or generate a detailed HTML report
+coverage html
+```
 
-**Returns:**
-- `float`: The dot product of `v` and `w`.
+### 3. Run the Flask API Server
 
----
+```bash
+# Set environment variable
+export API_KEY=[VALUE]
 
-## `norm(v)`
-Computes the Euclidean norm (magnitude) of a 2D vector.
+# Start the server
+python application.py
+```
 
-**Parameters:**
-- `v` (tuple or list of float): The 2D vector.
+### 4. Send a PDF Processing Request
 
-**Returns:**
-- `float`: The Euclidean norm of `v`.
-
----
-
-## `orientation(p1, p2, p3)`
-
-Finds the orientation of an ordered triplet `(p1, p2, p3)`.
-
-**Parameters:**
-
-- `p1` (tuple or list of float): First point.
-- `p2` (tuple or list of float): Second point.
-- `p3` (tuple or list of float): Third point.
-
-**Returns:**
-
-- `int`: `0` for collinear, `1` for clockwise, `2` for counterclockwise.
-
----
+```bash
+curl --request POST \
+  --url http://localhost:5000/api/v1/pdf-proccessing/request \
+  --header 'Content-Type: application/json' \
+  --header 'X-API-KEY: [API_KEY]' \
+  --data '{
+    "file_id":"[FILE_ID]",
+    "user_id":"[USER_ID]",
+    "bucket_name": "[BUCKET_NAME]"
+}'
+```
 
 
-## `distance_point_to_segment(P, A, B)`
-Computes the shortest distance from a point `P` to a line segment defined by points `A` and `B`.
+## 👷 Deployment Notes
 
-**Parameters:**
-- `P` (tuple or list of float): The point.
-- `A` (tuple or list of float): One endpoint of the segment.
-- `B` (tuple or list of float): The other endpoint of the segment.
+Only the following files are deployed to production:
 
-**Returns:**
-- `float`: The shortest distance from `P` to segment `AB`.
+- `application.py`
+- `utils.py`
+- `sample.csv`
+- `requirements.txt`
+
+All other files are used for development, testing, or debugging purposes.
 
 ---
 
-## `segment_intersection(A1, A2, B1, B2)`
-
-Determines if two line segments `A1A2` and `B1B2` intersect.
-
-**Parameters:**
-
-- `A1` (tuple or list of float): First endpoint of the first segment.
-- `A2` (tuple or list of float): Second endpoint of the first segment.
-- `B1` (tuple or list of float): First endpoint of the second segment.
-- `B2` (tuple or list of float): Second endpoint of the second segment.
-
-**Returns:**
-
-- `bool`: `True` if the segments intersect, `False` otherwise.
-
----
-
-## `segment_continuous(A1, A2, B1, B2)`
-
-Determines if two line segments `A1A2` and `B1B2` fall within the same line.
-
-**Parameters:**
-
-- `A1` (tuple or list of float): First endpoint of the first segment.
-- `A2` (tuple or list of float): Second endpoint of the first segment.
-- `B1` (tuple or list of float): First endpoint of the second segment.
-- `B2` (tuple or list of float): Second endpoint of the second segment.
-
-**Returns:**
-
-- `bool`: `True` if the segments fall within the same line, `False` otherwise.
-
----
-
-## `segment_distance(A1, A2, B1, B2)`
-Computes the shortest distance between two line segments `A1A2` and `B1B2`.
-
-**Parameters:**
-- `A1` (tuple or list of float): First endpoint of the first segment.
-- `A2` (tuple or list of float): Second endpoint of the first segment.
-- `B1` (tuple or list of float): First endpoint of the second segment.
-- `B2` (tuple or list of float): Second endpoint of the second segment.
-
-**Returns:**
-- `float`: The shortest distance between the two segments.
-
----
-
-## `segment_distance_wrapper(X, Y)`
-Wrapper function to compute distances between multiple segments.
-
-**Parameters:**
-- `X` (tuple/list): Coordinates of the first set of segment endpoints.
-- `Y` (tuple/list): Coordinates of the second set of segment endpoints.
-
-**Returns:**
-- `float`: Computed segment distance.
-
----
-
-## `graham_scan(points)`
-Computes the convex hull of a set of 2D points using Graham's scan algorithm.
-
-**Parameters:**
-- `points` (list of tuples/lists): A list of 2D points.
-
-**Returns:**
-- `list of lists`: The vertices of the convex hull in counterclockwise order.
-
----
-
-## `annotate_bounds(file, eps, min_samples)`
-Annotates bounding regions in a given file based on clustering parameters a.
-
-**Parameters:**
-- `file` (str): Path to the input file.
-- `eps` (float): The epsilon parameter for clustering.
-- `min_samples` (int): The minimum number of samples required to form a cluster.
-
-**Returns:**
-- `None`: The function processes the file and annotates bounds but does not return a value.
+## 👷 Author
+Hard Hat Raccoon Dev Team 🦝
