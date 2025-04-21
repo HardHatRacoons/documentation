@@ -21,7 +21,7 @@
   * [6.1 Functional Design](capstone_report/?id=_61-functional-design)
   * [6.2 Data Design](capstone_report/?id=_62-data-design)
 * [7. Evaluation](capstone_report/?id=_7-evaluation)
-  * [7.1 Functionality Evaluation](capstone_report/?id=_71-functional-evaluation)
+  * [7.1 Functionality Evaluation](capstone_report/?id=_71-functionality-evaluation)
   * [7.2 Usability Evaluation](capstone_report/?id=_72-usability-evaluation)
 * [8. Discussion](capstone_report/?id=_8-discussion)
 * [9. Future Work](capstone_report/?id=_9-future-work)

@@ -160,7 +160,7 @@ Feedback received from our pilot studies concludes that our Lofi-Designs is defi
 - Hover over a project to summarize important information such as total cost
 - Project folders of blueprints to organize gallery view
 - Multi-pages/floors should be able to be navigated within the same file
-- Regoranize upload button and loading to streamline the process
+- Reorganize upload button and loading to streamline the process
 
 ![Redesigned Lo-Fi of home-page and loading screen](images/Redesign_LoFi_1.png)
 
@@ -277,13 +277,9 @@ Provide several blueprint files as well as the web application of the project. T
 1. View the graphs and pin the pie chart
 1. Delete the file that was uploaded by this user
 
-
-![QR code for usability evaluations](images/usability_eval_qr.png)
-
-
 **Remote Survey**
 
-Send a link to a web app, send a survey link (google forms), review the results.
+![QR code for usability evaluations](images/usability_eval_qr.png)
 
 **Survey Qs:**
 1. Are you Color Blind?
@@ -312,7 +308,7 @@ Send a link to a web app, send a survey link (google forms), review the results.
   - Long form
 
 #### 7.2.2 Evaluation Results and Discussion
-Your evaluation results and a discussion of them goes here.
+
 
 ## 8 Discussion
 
