@@ -131,6 +131,12 @@ Socially and politically, the project presents no controversial risks or concern
 
 Since our main goal is to reduce the amount of time spent during construction on determining the total cost of the whole construction project, there are a few different ways to do this. Method 1 is to take blueprint pdfs, run them through an algorithm that determines the weight and cost of each piece, and total up the cost. Method 2 is to use a formula to roughly estimate the total cost based on the volume and surface area of each floor. Method 3 is to look at historical data and find buildings of the same size and shape and estimate the value based on that data. All 3 of these methods will give us estimates that might be close to the exact value, but one method makes the most sense. Since one of our end goals is to reach a minimum success rate of 90%, we want to be very precise in calculating this total cost. Method 2 and 3 have the problem of being rough estimates, meaning they aren’t precise enough. Method 1 is more difficult, but if done correctly, it should lead to accurate results. Without looking specifically at the blueprint and calculating the cost of each piece, we won’t achieve results with the desired level of accuracy. Because of this, we will be choosing method 1 going forward.
 
+**Algorithm First Rendition:** For the algorithm, we initially used SciPy’s built in DBScan model and wrote a custom function so DBScan would work with line segments as opposed to points. The page detection was also very barebones, running the algorithm on any page with the word “steel”. By using a custom distance metric for SciPy’s DBScan, we were limited to an O(n²) time complexity, performed over more pages than needed, resulting simple PDFs taking hours to proccess.
+
+**Algorithm Second Rendition:** We later learned that AWS Lambda functions (which we initially planned to run our algorithm on) had a 15 minute limit. Thus we optimized our page search by looking instead for steelbeam keywords such as “W27x178” or “S24x121”. We also used the R-tree data structure to store line segments. These changes resulted in a O(n log n) time complexity over less pages. When paired with processing pages in parallel, runtime was dramatically reduced to mere minutes for most pdfs. However, to enable R-tree’s O(log n) search with SciPy’s DBScan, we used precomputed distance matrix’s, using up O(n²) space complexity, thus slowing down our machines or crashing it entirely with larger pdfs.
+
+**Algorithm Third Rendition:** Due to various factors we decide to not use AWS Lambda, so the 15 minute hard limit was no longer an issue. But the space complexity issue needed to be fixed. SciPy’s DBScan does not support custom traversal, so we opted for writing our own DBScan algorithm using R-trees internally. This fixed our space complexity issue to O(n) and removed the need for parallel page processing. Paired with a couple of small optimizations to our page search, most PDFs could be processed in mere seconds.
+
 ### 5.2 Lo-fi Prototyping
 
 ![Initial System Diagram](images/InitialSystemDesign.png)
@@ -252,6 +258,7 @@ The close to 100% coverage of all functions, lines, and branches of unit tests o
 In the backend, we profiled our code to find which functions took the longest for performance testing. From this, we learned that over the past 124 algorithm calls, the function that took the most time was find_neighbors_rtree, the function we used to group lines together. This function took up 37.6% of the run-time, while the second-most called function took up only 1.2%. Over 124 profiles, this took a total time of 27.55 mins, resulting in an average of 13.33 seconds per page. Given that most blueprint pdfs are between 3-10 pages, the overall runtime is between 1-5 mins on average. This is in line with our goal of reaching less than 15 min run-time.
 
 ![Profiling](images/Profiling.png)
+
 Figure 7.1.2 _Screenshot of a sentry.io call tree profiling our code_
 
 ### 7.2 Usability Evaluation
