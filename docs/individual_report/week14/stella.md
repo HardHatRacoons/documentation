@@ -8,38 +8,36 @@
 
 ### What did _you_ work on this past week?
 
-| Task                 | Status      | Time Spent |
-| -------------------- | ----------- | ---------- |
-| Usability study      | In progress | 4          |
-| Meeting with sponsor | complete    | 1          |
-| Organize team activity | complete    | 2          |
+| Task                               | Status   | Time Spent |
+| ---------------------------------- | -------- | ---------- |
+| Usability study results            | complete | 3          |
+| compile list of feedback to change | complete | 1          |
+| CS Capstone Expo                   | complete | 2.5        |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![new usability study plan](images/stella-usability-study.png)
+![new usability study plan](images/expo.png)
 
 ### What problems did you run into? What is your plan for them?
 
-Not really any problems at this stage of the project. We keep coming up with new ideas to evaluate while we are doing it on the fly, and we're trying to update the plan as we go. 
+Not really any problems at this stage of the project. I think our capstone report is now increasingly out of date as we received more and more feedback from our instructors, sponsors, and classmates and we should look to updating it. 
 
 ### What is the current overall project status from your perspective?
 
-We are doing really good and the project has been done. There are some things that we never noticed before that we can update on our application.
+I think we have done a great job, and we can finish off strong with a clear plan ahead to make updates to usability feedback we have received as well as the executable binary that has finally been provided to us by our sponsor. 
 
 ### How is your team functioning from your perspective?
 
-Really good! We spent a lot of time this Sunday doing activities.
+The team is working well together and we are all ready to be done
 
 ### What new ideas did you have or skills did you develop this week?
 
-I have new ideas of things to implement in our application like:
-- sorting our files should be by recent order, or an order that makes sense
-- maybe we can automatically open the file that someone uploads
+It was quite insightful seeing the way that other people saw our product in a way that none of us has ever seen. It provided a fresh perspective and we are making more interactions on the app easier to use. 
 
 ### Who was your most awesome team member this week and why?
 
-Emmie for going out of her way to by hand mass producing stickers efficiently and built a very recognizable brand for our project
+Chris and Michael did a great job presenting at the CS Expo
 
 ## Plans for Next Week
 
 _What are you going to work on this week?_
-Finish conducting user studies and create the changes that we learned in the application. 
+I'm trying to stay on top of all the items due (mostly from work done across the whole semester) and then help on working on front end to fix feedback from usability evaluations. 
