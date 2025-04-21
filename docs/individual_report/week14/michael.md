@@ -10,13 +10,12 @@
 
 | Task | Status | Time Spent |
 | ---- | ------ | ---------- |
-| Capstone Poster | In Progress | 0.5 Hour |
-| Get pre-release for Sponsor | In Progress | 1 Hour|
-| Meeting with Sponsor | Complete | 1 Hour |
-| Team bonding | Complete | 4 Hours |
+| CSCE Expo | Complete | 2 Hours |
+| Sent pre-release to sponsor | Complete | 1 Hour|
+| Backend comments and documentation | In progress | 1 Hour |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![Team Bonding](images/michael.jpg)
+![Backend Docs](images/backend_docs.png)
 
 ### What problems did you run into? What is your plan for them?
 Finding things to do during the off week. 
@@ -28,12 +27,12 @@ We are pretty much done with the project.
 Team worked well together
 
 ### What new ideas did you have or skills did you develop this week?
-I learned how to solve the Sherlock Holmes Escape Room.
+I got practice for our poster presentation.
 
 ### Who was your most awesome team member this week and why?
-Emmie for making awesome stickers
+Stella for giving me tasks
 
 ## Plans for Next Week
 
 _What are you going to work on this week?_
-I will work on my presentation for the Expos
+Work on our final presentation
