@@ -9,7 +9,7 @@ The backend is built with Python and AWS Lambda for scalable processing, while t
 
 This project demonstrates that automating blueprint analysis can significantly reduce the time and cognitive load required to prepare construction bids. By integrating machine-readable interpretation with a user-centered design approach, the system provides an efficient, scalable, and inclusive solution for stakeholders across the construction pipeline.
 
-## Introduction
+## 1 Introduction
 
 The construction industry accounted for over 8 million jobs in 2024, making it one of the largest employment sectors in the U.S. economy (U.S. Bureau of Labor Statistics, 2025). Vector Intelligence has partnered with stakeholders in the steel industry to develop software that enables end users to estimate projected material costs directly from vectorized construction blueprints. This advancement allows users to gain essential specifications and insights about a project within minutes—compared to the days it would typically take to analyze blueprints manually. The initial success rate of the software in automatically generating specifications from construction blueprints is 75%. Our task is to enhance this algorithm and integrate it into a more user-friendly interface.
 

@@ -1,5 +1,5 @@
 * [Abstract](capstone_report?id=abstract)
-* [1. Introduction](capstone_report/?id=introduction)
+* [1. Introduction](capstone_report/?id=_1-introduction)
   * [1.1 Case Scenarios](capstone_report/?id=_11-case-scenarios)
   * [1.2 Goal and Constraints](capstone_report/?id=_12-goals-and-constraints)
   * [1.3 Solution Summary](capstone_report/?id=_13-solution-summary)
