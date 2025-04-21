@@ -10,28 +10,28 @@
 
 | Task | Status | Time Spent |
 | ---- | ------ | ---------- |
-| work on capstone poster | done? | 1 |
-| cut stickers |in progress | 2.5 |
-|      |        |            |
+| attend capstone expo | done | 2.5 |
+| work on capstone report |done | 2 |
+| implement user study feedback and comment code | in progress | 2 |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![stickers](images/emmie-stickers.jpg)
+![picture of team at expo](images/expo.png)
 
 ### What problems did you run into? What is your plan for them?
-I did not run into any problems really. Working on user studies can be hard though because it is difficult to find people to do them.
+I did not run into any problems really. I'm just tired recently and trying to work.
 
 ### What is the current overall project status from your perspective?
-The project seems to be on track.
+The project seems to be on track. We are almost done!
 
 ### How is your team functioning from your perspective?
 The team is functioning well.
 
 ### What new ideas did you have or skills did you develop this week?
-I developed my fast cutting skills and oratory skills.
+I developed my oratory skills more.
 
 ### Who was your most awesome team member this week and why?
-My most awesome team member was Emmie for making cool raccoon stickers.
+My most awesome team member was Mikel for hanging out with me during expo!
 
 ## Plans for Next Week
 _What are you going to work on this week?_
-I am going to finish up user studies and stickers and then implement fixes that the users gave us as feedback.
+I am going to finish up user studies feedback and commenting code.
