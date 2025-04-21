@@ -242,7 +242,13 @@ Performance testing will be done whenever the algorithm for annotating pdfs is f
 System testing will be done at the end of the project, when we integrate our front-end and back-end together. We will measure the overall accuracy of our system by manually inputting some example pdfs and comparing the actual known value of the total weight to the output of the total weight given by our algorithm. Since our definition of success is a 90% accurate algorithm, the expected result should be a total weight within 10% of the actual weight. Our system will be adequately tested if we get >90% accuracy on all the test pdfs we were given.
 
 #### 7.1.2 Evaluation Results and Discussion
-Your evaluation results and a discussion of them goes here.
+
+The team’s unit tests and integration tests on the frontend are bundled together. Specifically, the integration tests are in App.test.jsx, and cover authentication flow and user navigation, while all the other tests are unit tests, but some unit tests for larger components like page views also test integration and user interaction with lesser components like paginators.
+
+![Frontend Coverage](images/Frontend%20Coverage.png)
+
+The close to 100% coverage of all functions, lines, and branches of unit tests on the frontend signify that all parts of the web application behave as expected in isolation. This allows the team to ensure that errors that come up during integration testing and further development can be easily accounted for and fixed. The team also made sure to cover user behaviors and interactions with the website during integration testing. Intended user interaction patterns and flow are shown by the functionality testing results to be working as expected, which supports the team’s goal of creating a system that is easy for users to make use of in the sense that there will be no errors that the user does not expect from normal app usage and behavior. By reducing unexpected error, the team also makes the web app less confusing for new users.
+
 
 ### 7.2 Usability Evaluation
 The observational study is designed to evaluate the user experience of a web application used for viewing and managing blueprint files. The evaluation will be conducted by providing participants with several blueprint files and access to the web application, which will already contain some files for immediate access. Participants will be observed performing a series of tasks, and various aspects of their interaction with the application will be recorded.
