@@ -308,7 +308,45 @@ Provide several blueprint files as well as the web application of the project. T
   - Long form
 
 #### 7.2.2 Evaluation Results and Discussion
+We conducted 20 usability evaluations combining observed task performance with follow-up interviews and surveys. Participants completed core application tasks—uploading blueprints, navigating file views, and exploring metrics—while evaluators tracked time, user interactions, and common issues. Surveys further assessed ease-of-use, satisfaction, and feature feedback.
 
+From the post-task survey data, users rated their experience on a 5-point scale:
+
+| Task Area                              | Avg. Rating (1–5) |
+|----------------------------------------|-------------------|
+| Signing in                             | 5.0               |
+| Uploading files                        | 5.0               |
+| Viewing annotated files                | 4.8               |
+| Distinguishing between uploaded files  | 3.8               |
+| Navigating between pages               | 5.0               |
+| Reading data and graphs                | 4.6               |
+| Color/visual accessibility             | 100% "Yes"        |
+
+These results indicate that core flows like sign-in, upload, and navigation are highly intuitive. The only area with notable variability was file distinguishability, where some users had difficulty differentiating similar files in the gallery.
+
+We identified multiple usability improvements through observations and open-ended responses. Common themes include:
+
+**Pain Points & Unmet Expectations**
+- Several users expected clicking a file name after upload would take them to the file view automatically.
+- A few found the back arrow too small or visually unclear.
+- Some expected visual loading indicators during upload or PDF rendering.
+- Users occasionally lost track of which page they were on when switching views.
+
+**Requested Features**
+- Sort gallery by name or date
+- Zoom and scroll improvements on blueprints and graphs
+- Click-to-preview or hover summaries for each file
+- Pinning behavior should have more feedback or animation
+- Persistent page state and better theme consistency on load
+
+**Positive Feedback**
+- Dark/light mode toggling and visual design received praise.
+- Users highlighted the pinning feature, the upload progress indicator, and the overall smooth performance.
+- Color scheme and styling were rated favorably across all participants, including those with accessibility concerns.
+
+The results affirm that the application is easy to use and visually accessible, even for users without prior construction software experience. The overwhelmingly positive ratings across all usability dimensions validate the current design direction. However, minor adjustments—especially around visual cues and gallery interactions—could significantly enhance the user experience.
+
+The feedback list has been prioritized in the development backlog. Several requests, such as search bars or file success indicators, were rejected due to redundancy or workflow concerns. Collectively, these insights provide a clear roadmap for refining the system’s usability and delivering a more polished product in future iterations.
 
 ## 8 Discussion
 
