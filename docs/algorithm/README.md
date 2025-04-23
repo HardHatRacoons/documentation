@@ -19,7 +19,7 @@ Contains unit tests written with Python's `unittest` framework. Code coverage is
 ### `main.py` ⚙️ (Development)  <!-- {docsify-ignore} -->
 Developer tool for running high-level processing logic locally. Uses `sentry_sdk` for profiling and error tracking.
 
-### `vectorize_page.py` 🖼️ (Debugging)
+### `vectorize_page.py` 🖼️ (Debugging) <!-- {docsify-ignore} -->
 Generates page-level visualizations to help with debugging and fine-tuning the steel structure detection logic.
 
 ---
