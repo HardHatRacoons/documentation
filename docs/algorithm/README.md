@@ -199,5 +199,378 @@ All other files are used for development, testing, or debugging purposes.
 
 ---
 
+## </> `utils.py` Code Documentation
+
+### dot
+
+```python
+def dot(v: tuple[float, float], w: tuple[float, float]) -> float
+```
+
+Compute the dot product of two 2D vectors.
+
+**Arguments**:
+
+- `v` _tuple[float, float]_ - First 2D vector.
+- `w` _tuple[float, float]_ - Second 2D vector.
+  
+
+**Returns**:
+
+- `float` - The dot product of vectors v and w.
+
+
+### norm
+
+```python
+def norm(v: tuple[float, float]) -> float
+```
+
+Compute the Euclidean norm (magnitude) of a 2D vector.
+
+**Arguments**:
+
+- `v` _tuple[float, float]_ - A 2D vector.
+  
+
+**Returns**:
+
+- `float` - The Euclidean norm of the vector.
+
+
+### orientation
+
+```python
+def orientation(p1: tuple[float, float], p2: tuple[float, float],
+                p3: tuple[float, float]) -> int
+```
+
+Determine the orientation of an ordered triplet (p1, p2, p3).
+
+**Arguments**:
+
+- `p1` _tuple[float, float]_ - First point.
+- `p2` _tuple[float, float]_ - Second point.
+- `p3` _tuple[float, float]_ - Third point.
+  
+
+**Returns**:
+
+- `int` - Orientation code:
+  - 0 if collinear
+  - 1 if clockwise
+  - 2 if counterclockwise
+
+
+### distance\_point\_to\_segment
+
+```python
+def distance_point_to_segment(P: tuple[float, float], A: tuple[float, float],
+                              B: tuple[float, float]) -> float
+```
+
+Compute the shortest distance between a point and a line segment.
+
+**Arguments**:
+
+- `P` _tuple[float, float]_ - The point.
+- `A` _tuple[float, float]_ - One endpoint of the segment.
+- `B` _tuple[float, float]_ - The other endpoint of the segment.
+  
+
+**Returns**:
+
+- `float` - The shortest distance from point P to the line segment AB.
+
+
+### segment\_intersection
+
+```python
+def segment_intersection(A1: tuple[float, float], A2: tuple[float, float],
+                         B1: tuple[float, float], B2: tuple[float,
+                                                            float]) -> bool
+```
+
+Determine whether two line segments intersect.
+
+**Arguments**:
+
+- `A1` _tuple[float, float]_ - Start point of first segment.
+- `A2` _tuple[float, float]_ - End point of first segment.
+- `B1` _tuple[float, float]_ - Start point of second segment.
+- `B2` _tuple[float, float]_ - End point of second segment.
+  
+
+**Returns**:
+
+- `bool` - True if the segments intersect, False otherwise.
+
+
+### segment\_continuous
+
+```python
+def segment_continuous(A1: tuple[float, float], A2: tuple[float, float],
+                       B1: tuple[float, float], B2: tuple[float,
+                                                          float]) -> bool
+```
+
+Check if two line segments are collinear (i.e., lie on the same line).
+
+**Arguments**:
+
+- `A1` _tuple[float, float]_ - Start point of first segment.
+- `A2` _tuple[float, float]_ - End point of first segment.
+- `B1` _tuple[float, float]_ - Start point of second segment.
+- `B2` _tuple[float, float]_ - End point of second segment.
+  
+
+**Returns**:
+
+- `bool` - True if segments are collinear, False otherwise.
+
+
+### segment\_distance
+
+```python
+def segment_distance(A1: tuple[float, float], A2: tuple[float, float],
+                     B1: tuple[float, float], B2: tuple[float,
+                                                        float]) -> float
+```
+
+Compute the shortest distance between two line segments.
+
+**Arguments**:
+
+- `A1` _tuple[float, float]_ - Start point of first segment.
+- `A2` _tuple[float, float]_ - End point of first segment.
+- `B1` _tuple[float, float]_ - Start point of second segment.
+- `B2` _tuple[float, float]_ - End point of second segment.
+  
+
+**Returns**:
+
+- `float` - The minimum distance between the two segments.
+
+
+### segment\_distance\_wrapper
+
+```python
+def segment_distance_wrapper(X: list[float], Y: list[float]) -> float
+```
+
+Wrapper around `segment_distance` that adjusts distance if segments are collinear.
+
+**Arguments**:
+
+- `X` _list[float]_ - First line segment represented as [x1, y1, x2, y2].
+- `Y` _list[float]_ - Second line segment represented as [x1, y1, x2, y2].
+  
+
+**Returns**:
+
+- `float` - Adjusted distance between segments X and Y.
+
+
+### find\_pages\_to\_annotate
+
+```python
+def find_pages_to_annotate(doc: any) -> list[int]
+```
+
+Identify which pages of a PDF should be annotated based on text content and patterns.
+
+**Arguments**:
+
+- `doc` - A PyMuPDF document object.
+  
+
+**Returns**:
+
+- `list[int]` - Indices of pages that meet annotation criteria.
+
+
+### polygon\_contains\_point
+
+```python
+def polygon_contains_point(hull: list[tuple[float, float]], x: float,
+                           y: float) -> bool
+```
+
+Determine if a point is inside a polygon
+
+**Arguments**:
+
+- `hull` _list[tuple[float, float]]_ - List of polygon vertices.
+- `x` _float_ - X-coordinate of the point.
+- `y` _float_ - Y-coordinate of the point.
+  
+
+**Returns**:
+
+- `bool` - True if the point is inside the polygon, False otherwise.
+
+<a id="utils.find_steel_on_page"></a>
+
+### find\_steel\_on\_page
+
+```python
+def find_steel_on_page(page: any) -> list
+```
+
+Search for steel designation text patterns on a page and return matching text spans.
+
+**Arguments**:
+
+- `page` - A PyMuPDF page object.
+  
+
+**Returns**:
+
+- `list` - List of tuples containing matched text and their bounding quadrilaterals.
+
+
+### find\_neighbors\_rtree
+
+```python
+def find_neighbors_rtree(index: int, epsilon: float, r_tree,
+                         segments: list[list[float]]) -> list[int]
+```
+
+Find nearby line segments to a given segment using an R-tree and bounding box expansion.
+
+**Arguments**:
+
+- `index` _int_ - Index of the target segment.
+- `epsilon` _float_ - Expansion margin for the bounding box.
+- `r_tree` - An R-tree spatial index.
+- `segments` _list[list[float]]_ - List of segments defined by endpoints.
+  
+
+**Returns**:
+
+- `list[int]` - Indices of segments that lie within the expanded bounding box.
+
+
+### padded\_hull
+
+```python
+def padded_hull(points: list[list[float]],
+                padding: float) -> list[list[float]]
+```
+
+Compute a convex hull around a set of points and apply padding to expand it.
+
+**Arguments**:
+
+- `points` _list[list[float]]_ - List of 2D points [[x, y], ...].
+- `padding` _float_ - Padding multiplier to enlarge the hull.
+  
+
+**Returns**:
+
+- `list[list[float]]` - List of padded hull points.
+
+
+### custom\_dbscan
+
+```python
+def custom_dbscan(segments: list[list[float]], r_tree, eps: float,
+                  min_samples: int) -> list[int]
+```
+
+Custom DBSCAN clustering algorithm for line segments using spatial proximity.
+
+**Arguments**:
+
+- `segments` _list[list[float]]_ - List of line segments as [x1, y1, x2, y2].
+- `r_tree` - R-tree spatial index for segment lookup.
+- `eps` _float_ - Distance threshold for clustering.
+- `min_samples` _int_ - Minimum number of neighboring segments to form a cluster.
+  
+
+**Returns**:
+
+- `list[int]` - Cluster labels for each segment (−1 indicates noise).
+
+
+### get\_pdf\_bounds
+
+```python
+def get_pdf_bounds(file_stream, eps, min_samples, padding)
+```
+
+Process a PDF file and return bounding regions on pages containing steel beams.
+
+Steps:
+- Open the PDF document from the stream
+- Identify pages to annotate using keywords and patterns
+- For each selected page, compute bounding boxes using clustering (See get_page_bounds)
+- Return results in a dictionary format
+
+**Arguments**:
+
+- `file_stream` _bytes_ - The binary stream of the PDF file.
+- `eps` _float_ - Distance threshold for DBSCAN clustering.
+- `min_samples` _int_ - Minimum number of segments to form a root node in DBSCAN.
+- `padding` _float_ - Scale factor to expand the convex hull around detected clusters.
+  
+
+**Returns**:
+
+- `dict` - A dictionary with a "predictions" key containing bounding boxes and metadata.
+
+
+### get\_page\_bounds
+
+```python
+def get_page_bounds(file_stream, page_index, eps, min_samples, padding)
+```
+
+For a specific page in a PDF:
+- Identify steel text using regex patterns
+- Extract line segments and build R-tree for fast spatial search
+- Cluster line segments using custom DBSCAN based on proximity
+- Filter relevant clusters and compute a convex hull with padding
+- Match hulls to steel text and return the bounding data
+
+**Arguments**:
+
+- `file_stream` _bytes_ - The binary stream of the PDF file.
+- `page_index` _int_ - Page number to process.
+- `eps` _float_ - Distance threshold for clustering.
+- `min_samples` _int_ - Minimum points required to form a root node in DBSCAN.
+- `padding` _float_ - Padding factor for the convex hull.
+  
+
+**Returns**:
+
+- `list` - A list of dictionaries representing detected regions on the page.
+
+
+### draw\_bounds
+
+```python
+def draw_bounds(file_stream, predictions)
+```
+
+Draws annotations on the PDF
+
+Steps:
+- Draws a red polygon for each bounding region (convex hull)
+- Highlights steel segments within those regions using green lines
+- Returns the modified PDF as bytes
+
+**Arguments**:
+
+- `file_stream` _bytes_ - The original PDF file as a byte stream.
+- `predictions` _dict_ - Output from `get_pdf_bounds()` containing detection metadata.
+  
+
+**Returns**:
+
+- `bytes` - The modified PDF as a byte stream with annotations.
+
+---
+
 ## 👷 Author
 Hard Hat Raccoon Dev Team 🦝
