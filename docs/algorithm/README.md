@@ -7,16 +7,16 @@ This project is a Flask-based API for processing and annotating steel structure 
 
 ## 📁 Files Overview
 
-### `application.py` ✅ (Production)
+### `application.py` ✅ (Production)  <!-- {docsify-ignore} -->
 Main entry point of the API. Handles incoming HTTP requests, security (API key validation), and asynchronous PDF processing.
 
-### `utils.py` ✅ (Production)
+### `utils.py` ✅ (Production)  <!-- {docsify-ignore} -->
 Contains all geometric computations, pattern recognition, clustering, and PDF annotation logic.
 
-### `tests.py` 🧪 (Development)
+### `tests.py` 🧪 (Development)  <!-- {docsify-ignore} -->
 Contains unit tests written with Python's `unittest` framework. Code coverage is measured using `coverage.py`.
 
-### `main.py` ⚙️ (Development)
+### `main.py` ⚙️ (Development)  <!-- {docsify-ignore} -->
 Developer tool for running high-level processing logic locally. Uses `sentry_sdk` for profiling and error tracking.
 
 ### `vectorize_page.py` 🖼️ (Debugging)
@@ -26,13 +26,13 @@ Generates page-level visualizations to help with debugging and fine-tuning the s
 
 ## 🚀 Endpoints
 
-### `GET /`
+### `GET /`  <!-- {docsify-ignore} -->
 Basic health check.
 
-### `POST /api/v1/pdf-proccessing/request`
+### `POST /api/v1/pdf-proccessing/request`  <!-- {docsify-ignore} -->
 Initiates asynchronous processing of a PDF document uploaded to S3.
 
-#### Request JSON Body
+#### Request JSON Body  <!-- {docsify-ignore} -->
 ```json
 {
   "file_id": "string",
@@ -41,7 +41,7 @@ Initiates asynchronous processing of a PDF document uploaded to S3.
 }
 ```
 
-#### Response
+#### Response  <!-- {docsify-ignore} -->
 - `202 Accepted`: Processing started.
 - `401 Unauthorized`: Missing API key.
 - `403 Forbidden`: Invalid API key.
@@ -70,7 +70,7 @@ X-API-KEY: your_api_key_here
 
 ## 📦 `utils.py` Functionality
 
-### ➕ Geometry Functions
+### ➕ Geometry Functions  <!-- {docsify-ignore} -->
 - `dot(v, w)`: Dot product
 - `norm(v)`: Vector magnitude
 - `orientation(p1, p2, p3)`: Point orientation (collinear, clockwise, counterclockwise)
@@ -80,19 +80,19 @@ X-API-KEY: your_api_key_here
 - `segment_distance(...)`: Closest distance between line segments
 - `segment_distance_wrapper(...)`: Wrapper with bias for collinear segments
 
-### 📄 PDF Page Parsing
+### 📄 PDF Page Parsing  <!-- {docsify-ignore} -->
 - `find_pages_to_annotate(doc)`: Find relevant pages using text patterns and area threshold
 - `find_steel_on_page(page)`: Extract steel designation strings using regex
 - `polygon_contains_point(hull, x, y)`: Check if point lies within polygon
 
-### 🧠 Clustering
+### 🧠 Clustering  <!-- {docsify-ignore} -->
 - `find_neighbors_rtree(...)`: Use R-tree for spatial neighbor lookup
 - `custom_dbscan(...)`: Custom DBSCAN clustering using distance metric and R-tree
 
-### 📐 Convex Hulls
+### 📐 Convex Hulls  <!-- {docsify-ignore} -->
 - `padded_hull(points, padding)`: Computes and expands a convex hull from points
 
-### 📍 High-level PDF Processing
+### 📍 High-level PDF Processing  <!-- {docsify-ignore} -->
 - `get_pdf_bounds(...)`: Main function to get bounding boxes for all relevant pages
 - `get_page_bounds(...)`: Process one page for annotation
 - `draw_bounds(...)`: Visually annotate and color steel regions in the PDF
@@ -132,7 +132,7 @@ X-API-KEY: your_api_key_here
 
 ## 📦 Getting Started
 
-### 1. Set Up the Virtual Environment
+### 1. Set Up the Virtual Environment  <!-- {docsify-ignore} -->
 
 ```bash
 python -m venv venv
@@ -148,7 +148,7 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 2. Run Tests & Coverage
+### 2. Run Tests & Coverage  <!-- {docsify-ignore} -->
 
 ```bash
 # Run all tests
@@ -161,7 +161,7 @@ coverage report
 coverage html
 ```
 
-### 3. Run the Flask API Server
+### 3. Run the Flask API Server  <!-- {docsify-ignore} -->
 
 ```bash
 # Set environment variable
@@ -171,7 +171,7 @@ export API_KEY=[VALUE]
 python application.py
 ```
 
-### 4. Send a PDF Processing Request
+### 4. Send a PDF Processing Request  <!-- {docsify-ignore} -->
 
 ```bash
 curl --request POST \
@@ -197,11 +197,10 @@ Only the following files are deployed to production:
 
 All other files are used for development, testing, or debugging purposes.
 
----
 
 ## </> `utils.py` Code Documentation
 
-### dot
+### dot  <!-- {docsify-ignore} -->
 
 ```python
 def dot(v: tuple[float, float], w: tuple[float, float]) -> float
@@ -220,7 +219,7 @@ Compute the dot product of two 2D vectors.
 - `float` - The dot product of vectors v and w.
 
 
-### norm
+### norm  <!-- {docsify-ignore} -->
 
 ```python
 def norm(v: tuple[float, float]) -> float
@@ -238,7 +237,7 @@ Compute the Euclidean norm (magnitude) of a 2D vector.
 - `float` - The Euclidean norm of the vector.
 
 
-### orientation
+### orientation  <!-- {docsify-ignore} -->
 
 ```python
 def orientation(p1: tuple[float, float], p2: tuple[float, float],
@@ -262,7 +261,7 @@ Determine the orientation of an ordered triplet (p1, p2, p3).
   - 2 if counterclockwise
 
 
-### distance\_point\_to\_segment
+### distance\_point\_to\_segment  <!-- {docsify-ignore} -->
 
 ```python
 def distance_point_to_segment(P: tuple[float, float], A: tuple[float, float],
@@ -283,7 +282,7 @@ Compute the shortest distance between a point and a line segment.
 - `float` - The shortest distance from point P to the line segment AB.
 
 
-### segment\_intersection
+### segment\_intersection  <!-- {docsify-ignore} -->
 
 ```python
 def segment_intersection(A1: tuple[float, float], A2: tuple[float, float],
@@ -306,7 +305,7 @@ Determine whether two line segments intersect.
 - `bool` - True if the segments intersect, False otherwise.
 
 
-### segment\_continuous
+### segment\_continuous  <!-- {docsify-ignore} -->
 
 ```python
 def segment_continuous(A1: tuple[float, float], A2: tuple[float, float],
@@ -329,7 +328,7 @@ Check if two line segments are collinear (i.e., lie on the same line).
 - `bool` - True if segments are collinear, False otherwise.
 
 
-### segment\_distance
+### segment\_distance  <!-- {docsify-ignore} -->
 
 ```python
 def segment_distance(A1: tuple[float, float], A2: tuple[float, float],
@@ -352,7 +351,7 @@ Compute the shortest distance between two line segments.
 - `float` - The minimum distance between the two segments.
 
 
-### segment\_distance\_wrapper
+### segment\_distance\_wrapper  <!-- {docsify-ignore} -->
 
 ```python
 def segment_distance_wrapper(X: list[float], Y: list[float]) -> float
@@ -371,7 +370,7 @@ Wrapper around `segment_distance` that adjusts distance if segments are collinea
 - `float` - Adjusted distance between segments X and Y.
 
 
-### find\_pages\_to\_annotate
+### find\_pages\_to\_annotate  <!-- {docsify-ignore} -->
 
 ```python
 def find_pages_to_annotate(doc: any) -> list[int]
@@ -389,7 +388,7 @@ Identify which pages of a PDF should be annotated based on text content and patt
 - `list[int]` - Indices of pages that meet annotation criteria.
 
 
-### polygon\_contains\_point
+### polygon\_contains\_point  <!-- {docsify-ignore} -->
 
 ```python
 def polygon_contains_point(hull: list[tuple[float, float]], x: float,
@@ -411,7 +410,7 @@ Determine if a point is inside a polygon
 
 <a id="utils.find_steel_on_page"></a>
 
-### find\_steel\_on\_page
+### find\_steel\_on\_page  <!-- {docsify-ignore} -->
 
 ```python
 def find_steel_on_page(page: any) -> list
@@ -429,7 +428,7 @@ Search for steel designation text patterns on a page and return matching text sp
 - `list` - List of tuples containing matched text and their bounding quadrilaterals.
 
 
-### find\_neighbors\_rtree
+### find\_neighbors\_rtree  <!-- {docsify-ignore} -->
 
 ```python
 def find_neighbors_rtree(index: int, epsilon: float, r_tree,
@@ -451,7 +450,7 @@ Find nearby line segments to a given segment using an R-tree and bounding box ex
 - `list[int]` - Indices of segments that lie within the expanded bounding box.
 
 
-### padded\_hull
+### padded\_hull  <!-- {docsify-ignore} -->
 
 ```python
 def padded_hull(points: list[list[float]],
@@ -471,7 +470,7 @@ Compute a convex hull around a set of points and apply padding to expand it.
 - `list[list[float]]` - List of padded hull points.
 
 
-### custom\_dbscan
+### custom\_dbscan  <!-- {docsify-ignore} -->
 
 ```python
 def custom_dbscan(segments: list[list[float]], r_tree, eps: float,
@@ -493,7 +492,7 @@ Custom DBSCAN clustering algorithm for line segments using spatial proximity.
 - `list[int]` - Cluster labels for each segment (−1 indicates noise).
 
 
-### get\_pdf\_bounds
+### get\_pdf\_bounds  <!-- {docsify-ignore} -->
 
 ```python
 def get_pdf_bounds(file_stream, eps, min_samples, padding)
@@ -520,7 +519,7 @@ Steps:
 - `dict` - A dictionary with a "predictions" key containing bounding boxes and metadata.
 
 
-### get\_page\_bounds
+### get\_page\_bounds  <!-- {docsify-ignore} -->
 
 ```python
 def get_page_bounds(file_stream, page_index, eps, min_samples, padding)
@@ -547,7 +546,7 @@ For a specific page in a PDF:
 - `list` - A list of dictionaries representing detected regions on the page.
 
 
-### draw\_bounds
+### draw\_bounds  <!-- {docsify-ignore} -->
 
 ```python
 def draw_bounds(file_stream, predictions)
