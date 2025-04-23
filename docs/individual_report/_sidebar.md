@@ -34,5 +34,12 @@
     * [Lucy](/individual_report/week13/lucy.md)
     * [Michael](/individual_report/week13/michael.md)
     * [Stella](/individual_report/week13/stella.md)
+* Week 14
+    * [Chris](/individual_report/week14/chris.md)
+    * [Emmie](/individual_report/week14/emmie.md)
+    * [Lucy](/individual_report/week14/lucy.md)
+    * [Michael](/individual_report/week14/michael.md)
+    * [Stella](/individual_report/week14/stella.md)
+
 
 

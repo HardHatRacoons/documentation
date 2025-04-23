@@ -10,36 +10,33 @@
 
 | Task                              | Status      | Time Spent |
 | --------------------------------- | ----------- | ---------- |
-| Finish Creating User Study survey | Completed   | 0.5 hr     |
-| Create branding stickers          | In Progress | 4 hrs      |
-| Distribute User Stydt Survey      | In Progress | 1.5 hrs    |
-| Evaluate product                  | In Progress | 1 hr       |
+| Keep cutting stickers :\(         | In Progress | 1 hr       |
 | Continue revising Capstone Report | In Progress | 1 hr       |
+| CS Capstone Expo (msc)            | Compelete   | 2 hrs      |
 
 _Include screenshots/diagrams/figures/etc. to illustrate what you did this past week._
-![Stickers!!!](images/emmie-stickers.jpg)
+![Team HardHatRaccoons at the Expo](images/expo.png)
+_Figure 1. Our team at the CS Capstone Expo in the MSC_
 
 ### What problems did you run into? What is your plan for them?
-Trying to figure out what information is important to keep on our poster because there was a lot of information and not enough space.
-We later cut down some the wordy words and slimed down paragraphs to bullet points.
+Lots of due dates coming up and I will be out of town soon. I am going to try to knock out as much work as I can before I leave, 
+so that my team doesn't have too much on their plate.
 
 ### What is the current overall project status from your perspective?
-Project is complete, backend is working on last minute edits to surgically insert the sponsor's algorithmn into ours.
+We are making quick hot fixes and tweaks in the frontend according to the results we received from our evaluations
 
 ### How is your team functioning from your perspective?
-Doing great as always. We did an escape room called "[Sherlock Adventure!](https://www-1551q.bookeo.com/bookeo/b_escaperoombcs_start.html?ctlsrc2=YP3gCl504AfjCvUX8r1qsJ892SPS80piVsnD+N2wW4o%3D&src=02a&type=415517HNN4E16838E577B7)" this past weekend with Escape BCS and escaped with over 20 minutes left! Then we went to have a victory dinner at sushi masa :D
+Doing great as always!
 
 ### What new ideas did you have or skills did you develop this week?
-I learned about how to make stickers :3
+Sharpened my presentation skills from the Expo.
 
 ### Who was your most awesome team member this week and why?
-Stella for organizing our team bonding events!
+Chris for standing at the poster the whole time during the Expon and reeling in people!
 
 ## Plans for Next Week
 
 _What are you going to work on this week?_
-
-- Distribute more User Study survey
-- Evaluate product
+- Keep Cutting Stickers
 - Continue revising Capstone Report
-- Keep cutting stickers :\(
+- Tweaks for front end according to evaluations
