@@ -161,7 +161,14 @@ coverage report
 coverage html
 ```
 
-### 3. Run the Flask API Server  <!-- {docsify-ignore} -->
+### 3. AWS CLI Login
+Follow the steps regarding setting up the AWS CLI from
+```
+aws configure sso
+```
+See [here](https://hardhatracoons.github.io/documentation/#/application/local_hosting?id=setup-aws-amplify-locally) for more details.
+
+### 4. Run the Flask API Server  <!-- {docsify-ignore} -->
 
 ```bash
 # Set environment variable
@@ -171,7 +178,7 @@ export API_KEY=[VALUE]
 python application.py
 ```
 
-### 4. Send a PDF Processing Request  <!-- {docsify-ignore} -->
+### 5. Send a PDF Processing Request  <!-- {docsify-ignore} -->
 
 ```bash
 curl --request POST \
