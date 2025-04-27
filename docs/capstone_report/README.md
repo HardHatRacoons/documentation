@@ -11,7 +11,7 @@ This project demonstrates that automating blueprint analysis can significantly r
 
 ## 1 Introduction
 
-The construction industry accounted for over 8 million jobs in 2024, making it one of the largest employment sectors in the U.S. economy (U.S. Bureau of Labor Statistics, 2025). Vector Intelligence has partnered with stakeholders in the steel industry to develop software that enables end users to estimate projected material costs directly from vectorized construction blueprints. This advancement allows users to gain essential specifications and insights about a project within minutes—compared to the days it would typically take to analyze blueprints manually. The initial success rate of the software in automatically generating specifications from construction blueprints is 75%. Our task is to enhance this algorithm and integrate it into a more user-friendly interface.
+The construction industry accounted for over 8 million jobs in 2024, making it one of the largest employment sectors in the U.S. economy (U.S. Bureau of Labor Statistics, 2025). Vector Intelligence has partnered with stakeholders in the steel industry to develop software that enables end users to estimate projected material costs directly from vectorized construction blueprints. This advancement allows users to gain essential specifications and insights about a project within minutes—compared to the days it would typically take to analyze blueprints manually. Currently, only the steel beam annotation and CSV generation is automated. A team still needs to manually download the blueprint, draw bounding boxes around relevant structures, generate the CSV and annotations, then upload the new/updated files back for clients to view. Our goal is to make an algorithm that identifies relevant steel structures, and fully automate the above described process.
 
 ### 1.1 Case Scenarios
 
@@ -48,17 +48,17 @@ The team is not expected to create a 3D model of the construction blueprint file
 
 ### 1.3 Solution Summary
 
-The end goal of our project is to quickly and efficiently automate the task of determining which materials will be used in construction. The purpose of this is to allow the end users to get an estimate for how much a construction project will cost them. Our solution will work by assigning materials to every line and symbol in a blueprint which will later be used to account for that material in the total weight of the building. Specifically, we will create an algorithm that can automatically label every beam needed along with its dimensions and weight. We will then store this data using vector format and mark any materials that are already accounted for.
+The end goal of our project is to quickly and efficiently automate the task of determining which materials will be used in steel construction. The purpose of this is to allow the end users to get an estimate for how much a construction project will cost them. Our solution will work by automating the proccess of uploading a blueprint PDF and recieivng a coresponding annotated PDF and bill of materials. We will develop a web app that handles each step in the above mentioned process, requiring little to no manual intervention. We will also need to develop an algorithm to identify relevant steel structures in blueprint PDFs and output a JSON that can be used by our sponsor's algorithm.
 
 ## 1.4 Evaluation Summary
 
 The system will be evaluated through a combination of quantitative and qualitative approaches:
 
-**Quantitative:** The system will be evaluated based on the success rate of the program compared to the initial starting point (the aim will be increasing the success rate from 75% -> 90%). This will involve comparing the specifications generated from our improved algorithm to the original set of results.
+**Quantitative:** The system will be evaluated based on the time it takes for users to get feedback on an uploaded PDF. The goal will be to successfully return an annotated PDF and the corresponding CSV to users in a matter of minutes as opposed to hours. Additionally, it should not take users more than a couple of minutes (say 3 minutes) to login to our application and upload a PDF.
 
 **Qualitative**: We will utilize surveys and interviews for end users to gauge the accessibility and user friendliness of our front end designs. These will focus on areas such as ease of navigation, visual design, and the intuitiveness of interactive elements.
 
-**Main findings**: this section will be filled out as we proceed with our evaluations.
+**Main findings**: After performing 20 user studies and uploading various blueprint PDFs to our webapp, we found the proccessing time for PDFs to take less than 10 minutes on average and still below an hour for larger PDFs. Users took on average 107 seconds to perform all 9 tasks assigned to them, or 21 seconds to successfully upload a PDF. All users have never had prior intection with the webapp.
 
 ## 2 Related Work
 
@@ -102,7 +102,7 @@ The requirements for this project focus on building an accessible, user-friendly
 
 ### 3.2 Definition of Success
 
-The process for reading blueprint information has already been completed with a 75% success rate, and our task will be to increase the success rate to 90% through improving their current algorithms and potentially introducing machine learning. The current construction blueprint reader algorithm only works on a specific type of blueprint, and the sponsors would also like to be able to support more types of blueprint formats which is more of a stretch goal. By the end of this project, we aim to have a functional user interface that is simple to navigate and understand for the users. The user interface should have an intuitive way of representing specifications of all the different beams, either horizontal or vertical, within the scanned blueprints. The interface should also make sense to a user who is not familiar with construction. Analysis for success of the User interface will be evaluated through survey results of targeted end users. Lastly, the product should be able to analyze the blueprint to give a list of material specifications as well as the projected project cost within 90% accuracy.
+Currently our sponsors have an algorithm that annotates relevant steel beams in a PDF and outputs a CSV, given a JSON containing the bounds of relevant steel structures. Currently, everything else is done manually from downloading submitted PDFs to drawing bounds around relevant structures to uploading the results to clients. Our task will be to develop an algorithm to automatically identify relevant steel structures and output a JSON of the bounds, as well as fully automate the pipeline from user upload to when they receive the resulting CSV and annotated PDF. By the end of this project, we aim to have a functional user interface that is simple to navigate and understand for the users. The user interface should have an intuitive way of representing specifications of all the different beams, either horizontal or vertical, within the scanned blueprints. The interface should also make sense to a user who is not familiar with construction. Analysis for success of the User interface will be evaluated through survey results of targeted end users. Lastly, the process of taking an uploaded PDF and generating the annotations and CSV for users should take minutes to complete with no external intervention.
 
 ## 4 Engineering Standards, Regulations, and Considerations
 
@@ -112,7 +112,7 @@ To ensure the reliability, compatibility, and maintainability of our blueprint a
 
 On the software engineering side, we adhere to **RESTful API principles** for backend communication, including standardized HTTP methods, status codes, and resource naming. Coding practices follow widely accepted conventions such as **PEP8** for Python and use **Prettier** to enforce consistent code formatting across our React (JSX) codebase in frontend development, which promote code readability, maintainability, and team collaboration. All code is managed using **git**, following a branching strategy that supports agile development.
 
-For file storage and cloud infrastructure, we use **AWS services** (S3, Lambda, Amplify), and are informed by **ISO/IEC 27001** principles to maintain best practices in securing user data and managing access control. Finally, our user interface follows **WCAG 2.1 accessibility guidelines** to support a broad range of users, ensuring the application is intuitive, accessible, and responsive across devices.
+For file storage and cloud infrastructure, we use **AWS services** (S3, Elastic Beanstalk, Amplify), and are informed by **ISO/IEC 27001** principles to maintain best practices in securing user data and managing access control. Finally, our user interface follows **WCAG 2.1 accessibility guidelines** to support a broad range of users, ensuring the application is intuitive, accessible, and responsive across devices.
 
 ### 4.2 Applicable Regulations
 
@@ -217,22 +217,25 @@ _Figure 6.1.4 State Diagram showing different states of the “Create Project”
 - **React Router** - Used to route multiple react pages.
 - **NodeJS** - Used to import npm packages used by the project such as React Router and AWS Amplify
 - **AWS Amplify** - Used to host the front end as well as communicate with the various AWS services.
+- **PyMuPDF** - Python PDF reading library, used to extract line segments and text from PDF file.
+- **Flask** - Python web framework used to serve API routes
+- **boto3** - Python library used to communicate with AWS services (S3 Buckets)
+- **AWS Elastic Beanstalk** - Used to host algorithm API and load balance according to request volume.
 - **AWS S3** - Storage bucket used to store PDFs and CSVs.
-- **AWS Lambda** - Used to automatically run the magical Python algorithm when Blueprint is pushed to the S3 bucket.
-- **AWS RDS** - Used to host the PostgreSQL database
 - **GitHub** - Used to collaborate and set up GitHub Actions to push code to Amplify
 
 #### API Specifications:
 
-AWS API (Amplify), used to communicate with auth, S3, Lambda, and SQL databases, as well as host/deploy the website.
+AWS API (Amplify), used to communicate with auth and S3, as well as host/deploy the website.
+
+Algorithm API (in house), called by frontend to schedule pdf processing.
+- GET / - Basic health check.
+- POST /api/v1/pdf-proccessing/request - Initiates asynchronous processing of a PDF document uploaded to S3.
+
 
 ### 6.2 Data Design
 
-![UML Diagram](images/UML%20Diagram.png)
-
-_Figure 6.2.1 UML Diagram_
-
-Our data will be stored using S3 Buckets in AWS. There are a few major data structures that need to be stored including users, projects, blueprints, CSVs, and components. Following our user stories, a user can create a project or edit a project. Also, a user can add a blueprint or multiple blueprints to a project. After adding a blueprint to a project, the algorithm will run, automatically creating a CSV related to that blueprint and the necessary components that make up the blueprint.
+Our data will be stored using S3 Buckets in AWS. There are no additional data structures needed as file/folder permissions are handled using S3 file paths and Google Oauth tokens. After uploading  a blueprint the algorithm will run, automatically creating a CSV related to that blueprint and the necessary components that make up the blueprint which are uploaded to the S3 bucket in the relevant path. 
 
 ## 7 Evaluation
 
