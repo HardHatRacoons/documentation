@@ -661,7 +661,18 @@ _Figure A.4.3 Sprint 3 Burndown Chart_
 
 **Sprint 4**
 
-Currently in setup phase
+![Sprint 4 Burndown Chart](images/Sprint4_Burndown.png)
+
+_Figure A.4.4 Sprint 4 Burndown Chart_
+
+| Id  | User Story                                        | Assigned to     | Points |
+| --- | ------------------------------------------------- | --------------- | ------ |
+| 116 | Integrate algorithm to run with frontend app      | Michael         | 3      |
+| 122 | Input test bed for algorithm                      | Michael         | 3      |
+| 189 | Dark mode                                         | Lucy            | 2      |
+| 196 | Define brand color scheme, font, and layout       | Emmie           | 5      |
+| 197 | Implement annotation of individual beams          | Chris           | 8      |
+
 
 ### A.5 Budget
 
