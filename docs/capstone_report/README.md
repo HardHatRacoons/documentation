@@ -367,12 +367,12 @@ The feedback list has been prioritized in the development backlog. Several reque
 
 ## 8 Discussion
 
-The original methodology the team wrote was largely implemented to completion. The team added more libraries and features as the project went on.
-One drastic change from the original methodology was the exclusion of lambda in favor of hosting an API on Elastic Beanstalk. Lambda had a 15 minute timer on asynchronous jobs. Furthermore, Lambda with AMplify integration is meant to work with Javascript, so since the team chose to use Python instead of Javascript for the backend api, it was unnecessarily difficult.
+The original methodology the team wrote was largely implemented to completion. The team used the Agile project management scheme to organize the general direction and development of the project, with 4 sprints and an evaluation phase. This worked very well for our team because our team members tend to be very flexible in roles and pick up different tasks.
+One drastic change from the original plan was the exclusion of AWS Lambda in favor of hosting an API on Elastic Beanstalk. Lambda has a 15 minute timer on asynchronous jobs, which was a severe limiting factor during Sprint 3. Furthermore, Lambda with Amplify integration is meant to work with Javascript, so as the team chose to use Python instead of Javascript for the backend api, it was unnecessarily difficult to work with.
 
 Generally, the project team was very well organized and on task. Our project lead picked up a lot of the bookkeeping tasks, such as organizing sprints and the task board. However, she also picked up slack on the development side of things, making sure everyone worked together seamlessly. The team also split most writing assignments, meaning that no one was stuck not developing. If the team could have done anything differently, we would've chosen to set up all the testing and libraries during sprint 1, instead of having to catch up very quickly in sprint 2. The team would have also chosen to try to obtain the sponsor's algorithm sooner and therefore worry less about integration. Finally, the team would have chosen to host the API from the start on ELastic Beanstalk instead of spending hours working on the Lambda implementation, which would have saved many frustrations and tears.
 
-Testing for the frontend and backend was done incrementally alongside development. This made it a continual measure of success for the team in terms of user interaction and general correctness. Overall, the tests worked in validating the flow of the application through unit and integration testing. Performance tests in the backend also helped to create benchmarks on the development and improvement of the algorithm. 
+Testing for the frontend and backend was done incrementally alongside development. This made it a continual measure of success for the team in terms of user interaction and general correctness. Automatic testing also ensured consistent code quality and correctness on pull request. Overall, the tests worked in validating the flow of the application through unit and integration testing. Performance tests in the backend also helped to create benchmarks on the development and improvement of the algorithm. As testing was exhaustive, most if not all user interactions and scenarios are tested. However, if the project was to be done over, the team would probably lend a greater focus to integration testing and add more performance benchmarks. 
 
 ## 9 Future Work
 
@@ -384,7 +384,13 @@ Future teams can also look into transforming beam information about a blueprint 
 
 ## 10 Conclusion
 
-TBD
+
+this is the abstract
+Manual analysis of construction blueprints is a critical but time-consuming task in the building industry, often requiring hours of human effort to identify structural components and estimate material costs. This capstone project, sponsored by Vector Intelligence, introduces an end-to-end system that automates the interpretation of vector-format construction blueprints with a focus on identifying steel beams and columns. The system combines a backend algorithm for structural recognition with a responsive and accessible web interface that supports file uploads, annotation visualization, and data summarization. Annotated outputs include labeled PDFs and CSVs containing structural specifications such as dimensions and material weights, which can be used to generate accurate cost projections.
+
+The backend is built with Python and AWS Lambda for scalable processing, while the frontend leverages ReactJS, TailwindCSS, and AWS Amplify to ensure a seamless and mobile-friendly user experience. Emphasis was placed on accessibility through features such as text scaling, dyslexia-friendly fonts, color contrast modes, and screen reader compatibility. To evaluate the platform, we conducted usability testing with 20 participants from a range of technical backgrounds. Results from these studies showed high ease-of-use ratings across all core features, with particular strengths in file navigation, annotation clarity, and upload functionality. Qualitative feedback also revealed several desired features—such as better file sorting, more visible loading indicators, and persistent navigation states—which have since been incorporated into the product roadmap.
+
+This project demonstrates that automating blueprint analysis can significantly reduce the time and cognitive load required to prepare construction bids. By integrating machine-readable interpretation with a user-centered design approach, the system provides an efficient, scalable, and inclusive solution for stakeholders across the construction pipeline.
 
 ## References
 
