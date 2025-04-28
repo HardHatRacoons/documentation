@@ -3,6 +3,7 @@
 Devs: Chris Kelley, Michael McCarthy, Emmie Teng, Stella Yang, Lucy Zhang
 
 ## Abstract
+
 Manual analysis of construction blueprints is a critical but time-consuming task in the building industry, often requiring hours of human effort to identify structural components and estimate material costs. This capstone project, sponsored by Vector Intelligence, introduces an end-to-end system that automates the interpretation of vector-format construction blueprints with a focus on identifying steel beams and columns. The system combines a backend algorithm for structural recognition with a responsive and accessible web interface that supports file uploads, annotation visualization, and data summarization. Annotated outputs include labeled PDFs and CSVs containing structural specifications such as dimensions and material weights, which can be used to generate accurate cost projections.
 
 The backend is built with Python and AWS Lambda for scalable processing, while the frontend leverages ReactJS, TailwindCSS, and AWS Amplify to ensure a seamless and mobile-friendly user experience. Emphasis was placed on accessibility through features such as text scaling, dyslexia-friendly fonts, color contrast modes, and screen reader compatibility. To evaluate the platform, we conducted usability testing with 20 participants from a range of technical backgrounds. Results from these studies showed high ease-of-use ratings across all core features, with particular strengths in file navigation, annotation clarity, and upload functionality. Qualitative feedback also revealed several desired features—such as better file sorting, more visible loading indicators, and persistent navigation states—which have since been incorporated into the product roadmap.
@@ -17,7 +18,7 @@ The construction industry accounted for over 8 million jobs in 2024, making it o
 
 #### Construction Supply
 
-John owns a construction supply company that provides steel beams, concrete, and other materials. He frequently receives bulk orders from contractors and engineers but struggles to predict material demand accurately. 
+John owns a construction supply company that provides steel beams, concrete, and other materials. He frequently receives bulk orders from contractors and engineers but struggles to predict material demand accurately.
 One day, a contractor using the Blueprint Analysis System reaches out with an automated material list generated from a newly analyzed blueprint. The system provides detailed insights, including:
 
 - Exact quantities of beams, columns, and concrete needed
@@ -229,27 +230,29 @@ _Figure 6.1.4 State Diagram showing different states of the “Create Project”
 AWS API (Amplify), used to communicate with auth and S3, as well as host/deploy the website.
 
 Algorithm API (in house), called by frontend to schedule pdf processing.
+
 - GET / - Basic health check.
 - POST /api/v1/pdf-proccessing/request - Initiates asynchronous processing of a PDF document uploaded to S3.
 
-
 ### 6.2 Data Design
 
-Our data will be stored using S3 Buckets in AWS. There are no additional data structures needed as file/folder permissions are handled using S3 file paths and Google Oauth tokens. After uploading  a blueprint the algorithm will run, automatically creating a CSV related to that blueprint and the necessary components that make up the blueprint which are uploaded to the S3 bucket in the relevant path. 
+Our data will be stored using S3 Buckets in AWS. There are no additional data structures needed as file/folder permissions are handled using S3 file paths and Google Oauth tokens. After uploading a blueprint the algorithm will run, automatically creating a CSV related to that blueprint and the necessary components that make up the blueprint which are uploaded to the S3 bucket in the relevant path.
 
 ## 7 Evaluation
 
-The two main goals of the project is to deliver a friendly user interface to users and improve the steel blueprint algorithm, which is supported by the evaluation plan.  The frontend has unit and integration tests. The goal of the frontend is to achieve 100% test coverage of all functions, branches, and lines. This way, the team can ensure that in all scenarios, the user interface behaves as expected. The integration tests allow the team to mimic user behaviors and evaluate correctness of overarching subjects in the web app such as navigation and authentication flow. The unit tests test each component for correctness and ensure under error states the application does not crash. The backend has unit tests and performance benchmarks. The overall goal of the algorithm is 70-80% accuracy running under 15 minutes. This allows the team to ensure that the behavior of the algorithm is “correct”, track the progression of the development of the algorithm, and identify weak sections of the algorithm in need of improvement. This allows the team to make valuable improvements and efficiently develop.
+The two main goals of the project is to deliver a friendly user interface to users and improve the steel blueprint algorithm, which is supported by the evaluation plan. The frontend has unit and integration tests. The goal of the frontend is to achieve 100% test coverage of all functions, branches, and lines. This way, the team can ensure that in all scenarios, the user interface behaves as expected. The integration tests allow the team to mimic user behaviors and evaluate correctness of overarching subjects in the web app such as navigation and authentication flow. The unit tests test each component for correctness and ensure under error states the application does not crash. The backend has unit tests and performance benchmarks. The overall goal of the algorithm is 70-80% accuracy running under 15 minutes. This allows the team to ensure that the behavior of the algorithm is “correct”, track the progression of the development of the algorithm, and identify weak sections of the algorithm in need of improvement. This allows the team to make valuable improvements and efficiently develop.
 
 The usability evaluation is in the format of a survey that testers will take after completing a series of tasks. The questions are filled out on a scale of 1-5, so that there is a quantifiable result from the survey questions. The form also includes a free response suggestions box in case there are any thoughts that the questions do not cover. This allows the team to evaluate how the user interface performs with little to no instruction, mimicking the real world scenario in which it will be deployed. This allows the team to identify any points of concern or correction within the interface and ensure a friendly interface and performance.
 
 ### 7.1 Functionality Evaluation
+
 Since our definition of success is an improvement of the accuracy of our sponsor’s algorithm, our overarching testing goals are to compare and contrast the output of our system to the output of the sponsor’s algorithm. For the front-end, our overarching goal is to create an easy to use and navigate, even for people who aren’t familiar with construction.
 
 #### 7.1.1 Evaluation Procedures
+
 For both front-end and back-end, we will include unit testing and integration testing. For back-end, we also will add performance testing, since the algorithm takes longer depending on certain factors like the size of pdfs. Code consistency and standards are enforced with prettier configurations.
 
-Unit testing will be done whenever a new function is added and should be added to the corresponding test file, which is automatically run when attempting to make a pull request or manually by terminal. Unit testing will be measured based on the line coverage of the tests, and the expected results should be a percentage of the total code covered by the tests. Unit testing will support our definition of success by making sure that there are no tiny errors in our code, thus improving the overall accuracy. Our unit testing goal is to get to 100% coverage for our code. 
+Unit testing will be done whenever a new function is added and should be added to the corresponding test file, which is automatically run when attempting to make a pull request or manually by terminal. Unit testing will be measured based on the line coverage of the tests, and the expected results should be a percentage of the total code covered by the tests. Unit testing will support our definition of success by making sure that there are no tiny errors in our code, thus improving the overall accuracy. Our unit testing goal is to get to 100% coverage for our code.
 
 Integration testing will be done similar to unit testing, whenever a new component is added. Integration testing will also be done automatically when attempting to make a pull request or manually by terminal. Integration testing will also be measured based on the line coverage of the tests, and the expected result will still be a percentage of the total code covered by tests. Integration testing will support our definition of success by making sure each component works with any other component to ensure that there are no conflicts between components which could reduce our overall accuracy. Since our integration testing will be done at the same time as unit testing, we also want 100% coverage for integration testing.
 
@@ -272,10 +275,11 @@ In the backend, we profiled our code to find which functions took the longest fo
 Figure 7.1.2 _Screenshot of a sentry.io call tree profiling our code_
 
 ### 7.2 Usability Evaluation
+
 The observational study is designed to evaluate the user experience of a web application used for viewing and managing blueprint files. The evaluation will be conducted by providing participants with several blueprint files and access to the web application, which will already contain some files for immediate access. Participants will be observed performing a series of tasks, and various aspects of their interaction with the application will be recorded.
 
 During these tasks, the observer will record the time taken to complete each task, note interactions with the software, and capture users' thoughts and comments. After completing the tasks, users will be asked to fill out a survey to gather additional feedback on their experience. A remote survey will also be distributed to extend the evaluation reach, allowing insights from users who may not be directly observed.
-The combination of direct observation and remote survey methods will provide a comprehensive understanding of the software’s usability, identifying strengths, and areas for improvement based on real user interactions and perceptions. 
+The combination of direct observation and remote survey methods will provide a comprehensive understanding of the software’s usability, identifying strengths, and areas for improvement based on real user interactions and perceptions.
 
 #### 7.2.1 Evaluation Procedures
 
@@ -299,57 +303,84 @@ Provide several blueprint files as well as the web application of the project. T
 ![QR code for usability evaluations](images/usability_eval_qr.png)
 
 **Survey Qs:**
+
 1. Are you Color Blind?
-  - Yes, no
-2. Do you have any prior experience with using  softwares related to blueprints and/or construction?
-  - Yes, no
-3. How easy was it to sign in? 
-  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
+- Yes, no
+
+2. Do you have any prior experience with using softwares related to blueprints and/or construction?
+
+- Yes, no
+
+3. How easy was it to sign in?
+
+- Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
 4. How easy was it to upload a file?
-  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
+- Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
 5. How easy was it to view your annotated file?
-  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
+- Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
 6. How distinguishable were each file you uploaded?
-  - Scale 1 - 5 (1 - can't tell what is what, 5 - easily see which file is which)
+
+- Scale 1 - 5 (1 - can't tell what is what, 5 - easily see which file is which)
+
 7. How easy was it to navigate between pages?
-  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
+- Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
 8. How easy was it to read the data/graphs?
-  - Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
+- Scale 1 - 5 (1 - don’t know how to, 5 - very easy)
+
 9. Were the colors pleasing to look at? (If you are color blind, are they distinguishable?)
-  - Yes, no
+
+- Yes, no
+
 10. What was your favorite feature?
-  - Short answer
+
+- Short answer
+
 11. What was your least favorite feature?
-  - Short answer
+
+- Short answer
+
 12. Any suggestions for improvements or comments?
-  - Long form
+
+- Long form
 
 #### 7.2.2 Evaluation Results and Discussion
+
 We conducted 20 usability evaluations combining observed task performance with follow-up interviews and surveys. Participants completed core application tasks—uploading blueprints, navigating file views, and exploring metrics—while evaluators tracked time, user interactions, and common issues. Surveys further assessed ease-of-use, satisfaction, and feature feedback.
 
 From the post-task survey data, users rated their experience on a 5-point scale:
 
-| Task Area                              | Avg. Rating (1–5) |
-|----------------------------------------|-------------------|
-| Signing in                             | 5.0               |
-| Uploading files                        | 5.0               |
-| Viewing annotated files                | 4.8               |
-| Distinguishing between uploaded files  | 3.8               |
-| Navigating between pages               | 5.0               |
-| Reading data and graphs                | 4.6               |
-| Color/visual accessibility             | 100% "Yes"        |
+| Task Area                             | Avg. Rating (1–5) |
+| ------------------------------------- | ----------------- |
+| Signing in                            | 5.0               |
+| Uploading files                       | 5.0               |
+| Viewing annotated files               | 4.8               |
+| Distinguishing between uploaded files | 3.8               |
+| Navigating between pages              | 5.0               |
+| Reading data and graphs               | 4.6               |
+| Color/visual accessibility            | 100% "Yes"        |
 
 These results indicate that core flows like sign-in, upload, and navigation are highly intuitive. The only area with notable variability was file distinguishability, where some users had difficulty differentiating similar files in the gallery.
 
 We identified multiple usability improvements through observations and open-ended responses. Common themes include:
 
 **Pain Points & Unmet Expectations**
+
 - Several users expected clicking a file name after upload would take them to the file view automatically.
 - A few found the back arrow too small or visually unclear.
 - Some expected visual loading indicators during upload or PDF rendering.
 - Users occasionally lost track of which page they were on when switching views.
 
 **Requested Features**
+
 - Sort gallery by name or date
 - Zoom and scroll improvements on blueprints and graphs
 - Click-to-preview or hover summaries for each file
@@ -357,6 +388,7 @@ We identified multiple usability improvements through observations and open-ende
 - Persistent page state and better theme consistency on load
 
 **Positive Feedback**
+
 - Dark/light mode toggling and visual design received praise.
 - Users highlighted the pinning feature, the upload progress indicator, and the overall smooth performance.
 - Color scheme and styling were rated favorably across all participants, including those with accessibility concerns.
@@ -372,7 +404,7 @@ One drastic change from the original plan was the exclusion of AWS Lambda in fav
 
 Generally, the project team was very well organized and on task. Our project lead picked up a lot of the bookkeeping tasks, such as organizing sprints and the task board. However, she also picked up slack on the development side of things, making sure everyone worked together seamlessly. The team also split most writing assignments, meaning that no one was stuck not developing. If the team could have done anything differently, we would've chosen to set up all the testing and libraries during sprint 1, instead of having to catch up very quickly in sprint 2. The team would have also chosen to try to obtain the sponsor's algorithm sooner and therefore worry less about integration. Finally, the team would have chosen to host the API from the start on ELastic Beanstalk instead of spending hours working on the Lambda implementation, which would have saved many frustrations and tears.
 
-Testing for the frontend and backend was done incrementally alongside development. This made it a continual measure of success for the team in terms of user interaction and general correctness. Automatic testing also ensured consistent code quality and correctness on pull request. Overall, the tests worked in validating the flow of the application through unit and integration testing. Performance tests in the backend also helped to create benchmarks on the development and improvement of the algorithm. As testing was exhaustive, most if not all user interactions and scenarios are tested. However, if the project was to be done over, the team would probably lend a greater focus to integration testing and add more performance benchmarks. 
+Testing for the frontend and backend was done incrementally alongside development. This made it a continual measure of success for the team in terms of user interaction and general correctness. Automatic testing also ensured consistent code quality and correctness on pull request. Overall, the tests worked in validating the flow of the application through unit and integration testing. Performance tests in the backend also helped to create benchmarks on the development and improvement of the algorithm. As testing was exhaustive, most if not all user interactions and scenarios are tested. However, if the project was to be done over, the team would probably lend a greater focus to integration testing and add more performance benchmarks.
 
 ## 9 Future Work
 
@@ -380,10 +412,9 @@ Future teams can look into a number of improvements. Some of these were out of s
 
 There could be more graphs or other metrics provided in the data breakdown that would allow for more detailed understanding of specific parts of the blueprint, such as page by page breakdowns. There could also be pdf/graph zooming, which would improve user quality of life and make some information more readable. Future teams could also implement annotation hovering for blueprints in the web application, to make it a "one stop shop" for all the user's needs to understanding the construction blueprint and linking beam data to the table. This feature was excluded due to time constraints and being lower on the priority list of the sponsors. Future teams could also look into improving the algorithm further and reducing the runtime of the clustering algorithm, as well as more cohesive integration with the annotation algorithm.
 
-Future teams can also look into transforming beam information about a blueprint into a 3D model of the blueprint. This will greatly enhance user understanding of the blueprint by providing a very clear and concise visual element. This could be shown as an extra tab in the current file view. They can also improve the file system view to provide support for folders and multi-upload, which was determined to be not strictly nessearcy by the current team. 
+Future teams can also look into transforming beam information about a blueprint into a 3D model of the blueprint. This will greatly enhance user understanding of the blueprint by providing a very clear and concise visual element. This could be shown as an extra tab in the current file view. They can also improve the file system view to provide support for folders and multi-upload, which was determined to be not strictly nessearcy by the current team.
 
 ## 10 Conclusion
-
 
 this is the abstract
 Manual analysis of construction blueprints is a critical but time-consuming task in the building industry, often requiring hours of human effort to identify structural components and estimate material costs. This capstone project, sponsored by Vector Intelligence, introduces an end-to-end system that automates the interpretation of vector-format construction blueprints with a focus on identifying steel beams and columns. The system combines a backend algorithm for structural recognition with a responsive and accessible web interface that supports file uploads, annotation visualization, and data summarization. Annotated outputs include labeled PDFs and CSVs containing structural specifications such as dimensions and material weights, which can be used to generate accurate cost projections.
@@ -680,14 +711,37 @@ _Figure A.4.3 Sprint 3 Burndown Chart_
 
 _Figure A.4.4 Sprint 4 Burndown Chart_
 
-| Id  | User Story                                        | Assigned to     | Points |
-| --- | ------------------------------------------------- | --------------- | ------ |
-| 116 | Integrate algorithm to run with frontend app      | Michael         | 3      |
-| 122 | Input test bed for algorithm                      | Michael         | 3      |
-| 189 | Dark mode                                         | Lucy            | 2      |
-| 196 | Define brand color scheme, font, and layout       | Emmie           | 5      |
-| 197 | Implement annotation of individual beams          | Chris           | 8      |
+| Id  | User Story                                   | Assigned to | Points |
+| --- | -------------------------------------------- | ----------- | ------ |
+| 116 | Integrate algorithm to run with frontend app | Michael     | 3      |
+| 122 | Input test bed for algorithm                 | Michael     | 3      |
+| 189 | Dark mode                                    | Lucy        | 2      |
+| 196 | Define brand color scheme, font, and layout  | Emmie       | 5      |
+| 197 | Implement annotation of individual beams     | Chris       | 8      |
 
+**Sprint 5 - Evaluation Phase**
+
+![Sprint 5 - Evaluation Burndown Chart](images/Sprint5_Burndown.png)
+
+_Figure A.4.5 Sprint 5 - Evaluation Burndown Chart_
+
+| Id  | User Story                                             | Assigned to | Points |
+| --- | ------------------------------------------------------ | ----------- | ------ |
+| 208 | Sort files by alphabetically/recent                    | Emmie       | 0      |
+| 209 | Make Back arrow bigger                                 | Emmie       | 0      |
+| 210 | add cursor pointer to hover for pins and back buttons  | Emmie       | 0      |
+| 211 | Make delete button hitbox bigger                       | Emmie       | 0      |
+| 212 | Add file name clickable after successful upload        | Lucy        | 0      |
+| 213 | Add laoding text while canvas isn't ready              | Lucy        | 0      |
+| 214 | Fix light/dark mode button sync bug                    | Lucy        | 0      |
+| 215 | Add scroll bar inside of metrics view                  | Lucy        | 0      |
+| 216 | Add loading spinner to files being annotated           | Lucy        | 0      |
+| 217 | Match colors and styles in metrics view to rest of app | Lucy        | 0      |
+| 218 | Disable outer window scroll bar in weird dimensions    | Lucy        | 0      |
+| 219 | Save blueprint page number across page navigations     | Lucy        | 0      |
+| 220 | Make charts draggable instead of pin in place          | Stella      | 0      |
+| 228 | Cache ghost files while loading in gallery             | Lucy        | 0      |
+| 240 | Ignore shaded segments in blueprint                    | Chris       | 0      | 
 
 ### A.5 Budget
 
@@ -706,7 +760,7 @@ Accoreding to Figure A.5.1, we are currently only spending a very little amount 
 
 ## Appendix B: Implementation Details
 
-The project is split into two sections, the frontend (web application) and backend (algorithmic component).  The project is hosted on AWS Amplify and AWS Elastic Beanstalk.
+The project is split into two sections, the frontend (web application) and backend (algorithmic component). The project is hosted on AWS Amplify and AWS Elastic Beanstalk.
 
 ![System Diagram](images/Level_0_Diagram.png)
 _Figure B.1: System Diagram_
@@ -715,46 +769,46 @@ The frontend tech stack is as follows:
 
 The main tools of the frontend:
 
-* ReactJS: React JS is the main tool used for building the dynamic graphical user interface. It is used widely in industry. 
-* Vite: Vite is the build tool/development server used to serve react code. It is highly efficient and offers a variety of useful features.
-* TailwindCSS: TailwindCSS is a fast and easy-to-use css styling tool to speed up development and ensure style consistency.
-* AWS Amplify: Amplify is used to host the frontend and enable easy communication with AWS resources such as the S3 buckets and authentication.
+- ReactJS: React JS is the main tool used for building the dynamic graphical user interface. It is used widely in industry.
+- Vite: Vite is the build tool/development server used to serve react code. It is highly efficient and offers a variety of useful features.
+- TailwindCSS: TailwindCSS is a fast and easy-to-use css styling tool to speed up development and ensure style consistency.
+- AWS Amplify: Amplify is used to host the frontend and enable easy communication with AWS resources such as the S3 buckets and authentication.
 
 The supplementary libraries:
 
-* React-router: React router is used for relatively lightweight client side routing that doesn't require full page reloads.
-* React-icons: React icons were used for styling the web app with premade icon (svg) libraries.
-* PDFJS-dist: This is a pdf.js distribution used to load, parse, and render pdfs in the browser.
-* AG-Grid: AGGrid is a powerful tool for rendering large and complex data sets in a grid. It is used for rendering a large amount of steel structure data in a table with additional functionality (sorting, filtering, pagination).
-* D3: D3 is a lightweight JS data visualization tool. It is used to create, process, and graph json data about the steel beams.
-* Aws-amplify: AWS amplify provides deployment support and custom components for authentication and interfacing with the storage system.
+- React-router: React router is used for relatively lightweight client side routing that doesn't require full page reloads.
+- React-icons: React icons were used for styling the web app with premade icon (svg) libraries.
+- PDFJS-dist: This is a pdf.js distribution used to load, parse, and render pdfs in the browser.
+- AG-Grid: AGGrid is a powerful tool for rendering large and complex data sets in a grid. It is used for rendering a large amount of steel structure data in a table with additional functionality (sorting, filtering, pagination).
+- D3: D3 is a lightweight JS data visualization tool. It is used to create, process, and graph json data about the steel beams.
+- Aws-amplify: AWS amplify provides deployment support and custom components for authentication and interfacing with the storage system.
 
 The testing libraries:
 
-* React Testing Library (RTL): RTL is used to write test code for the react app to make sure behavior stays consistent and expected. It closely mimics user interactions in testing.
-* Vitest: Vitest is used as a test runner and coverage reporter.  It provides mocking support as well.
-* Github Actions: Github actions is used to automate test running on push and pull request.
+- React Testing Library (RTL): RTL is used to write test code for the react app to make sure behavior stays consistent and expected. It closely mimics user interactions in testing.
+- Vitest: Vitest is used as a test runner and coverage reporter. It provides mocking support as well.
+- Github Actions: Github actions is used to automate test running on push and pull request.
 
 The web application consists of two main primary views, with three other subviews and a sign-in view. Authentication locks all pages such that if the user is not signed in, they can only access the sign-in view. After signing in, the user is then taken to the home page, which consists of a gallery that displays all pdfs currently uploaded to the user’s account. Here, a user can also upload a new document (pdf). Upon clicking an uploaded document, the user is taken to the next view, the file view. This view has 3 separate tabs (subviews) consisting of the pdf blueprint view, the table view, and the metrics view. The pdf blueprint view displays one page of the selected pdf and allows the user to move between pages to view the whole pdf. It also contains buttons allowing users to download the annotated pdf, original document, or related csv of parsed data. The table view contains a table of all of the parsed beam data from the pdf. It allows filtering and searching. The metric view contains pertinent graphs of the data, such as total combined weight of steel beams of X type.
 
-|  |  |
-|-----------------|-----------------|
-| ![Sign-in page](images/SignIn_Page.png) _Figure B.2: Sign in View_ | ![Home page](images/Home_Page.png)_Figure B.3: Home View_ |
+|                                                                                      |                                                              |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![Sign-in page](images/SignIn_Page.png) _Figure B.2: Sign in View_                   | ![Home page](images/Home_Page.png)_Figure B.3: Home View_    |
 | ![Pdf blueprint page](images/PDF_Blueprint_Page.png) _Figure B.4 Pdf Blueprint View_ | ![Table page](images/Table_Page.png) _Figure B.5 Table View_ |
-| ![Metrics page](images/Metrics_Page.png) _Figure B.6 Metric View_ |  |
+| ![Metrics page](images/Metrics_Page.png) _Figure B.6 Metric View_                    |                                                              |
 
 The backend tech stack is as follows:
 
 Tools of the backend:
 
-* Flask: Flask is used to serve our API routes so the frontend can communicate with our backend python code.
-* PyMuPDF: PyMuPDF is the pdf parsing library we are using to extract information from and annotate the pdfs that users submit.
-* Scipy, NumPy, r-tree: Various methods from each are  used to streamline and simplify the algorithm code.
+- Flask: Flask is used to serve our API routes so the frontend can communicate with our backend python code.
+- PyMuPDF: PyMuPDF is the pdf parsing library we are using to extract information from and annotate the pdfs that users submit.
+- Scipy, NumPy, r-tree: Various methods from each are used to streamline and simplify the algorithm code.
 
 Backend testing tools:
 
-* Coverage: Coverage library is used along with the built in unittest module to run unit tests and generate a coverage report.
-* GitHub Actions: GitHub Actions is used to automate the testing processing to run on every pull request.
+- Coverage: Coverage library is used along with the built in unittest module to run unit tests and generate a coverage report.
+- GitHub Actions: GitHub Actions is used to automate the testing processing to run on every pull request.
 
 The backend is contained in three files: utils.py, tests.py, and application.py. Utils.py contains the main algorithm code. The algorithm is a modified version of dbscan that deals with weighted segments to determine steel structures on a construction blueprint. Tests.py contains testing code. Application.py calls utils.py and contains code regarding the api deployment of the parsing algorithm.
 
