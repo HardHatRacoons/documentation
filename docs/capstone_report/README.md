@@ -58,7 +58,7 @@ The system will be evaluated through a combination of quantitative and qualitati
 
 **Qualitative**: We will utilize surveys and interviews for end users to gauge the accessibility and user friendliness of our front end designs. These will focus on areas such as ease of navigation, visual design, and the intuitiveness of interactive elements.
 
-**Main findings**: After performing 20 user studies and uploading various blueprint PDFs to our webapp, we found the proccessing time for PDFs to take less than 10 minutes on average and still below an hour for larger PDFs. Users took on average 107 seconds to perform all 9 tasks assigned to them, or 21 seconds to successfully upload a PDF. All users have never had prior intection with the webapp.
+**Main findings**: After performing 20+ user studies and uploading various blueprint PDFs to our webapp, we found the processing time for PDFs to take less than 10 minutes on average and still below an hour for larger PDFs. Users took on average 107 seconds to perform all 9 tasks assigned to them, and 21 seconds to successfully upload a PDF. All users have never had prior interaction with the webapp. Most users complimented the aesthetics and navigability of the web app when prompted for extra feedback. Many users also did not have any specific things they would like to change about the website when asked so. Greater than 75% of users also rated the understandability of the metrics a 5/5. The team also achieved a google lighthouse score of greater than 90 out of 100 on all pages in both viewing modes (light/dark), making our website decently accessible for impaired users.
 
 ## 2 Related Work
 
@@ -367,11 +367,20 @@ The feedback list has been prioritized in the development backlog. Several reque
 
 ## 8 Discussion
 
-TBD
+The original methodology the team wrote was largely implemented to completion. The team added more libraries and features as the project went on.
+One drastic change from the original methodology was the exclusion of lambda in favor of hosting an API on Elastic Beanstalk. Lambda had a 15 minute timer on asynchronous jobs. Furthermore, Lambda with AMplify integration is meant to work with Javascript, so since the team chose to use Python instead of Javascript for the backend api, it was unnecessarily difficult.
+
+Generally, the project team was very well organized and on task. Our project lead picked up a lot of the bookkeeping tasks, such as organizing sprints and the task board. However, she also picked up slack on the development side of things, making sure everyone worked together seamlessly. The team also split most writing assignments, meaning that no one was stuck not developing. If the team could have done anything differently, we would've chosen to set up all the testing and libraries during sprint 1, instead of having to catch up very quickly in sprint 2. The team would have also chosen to try to obtain the sponsor's algorithm sooner and therefore worry less about integration. Finally, the team would have chosen to host the API from the start on ELastic Beanstalk instead of spending hours working on the Lambda implementation, which would have saved many frustrations and tears.
+
+Testing for the frontend and backend was done incrementally alongside development. This made it a continual measure of success for the team in terms of user interaction and general correctness. Overall, the tests worked in validating the flow of the application through unit and integration testing. Performance tests in the backend also helped to create benchmarks on the development and improvement of the algorithm. 
 
 ## 9 Future Work
 
-TBD
+Future teams can look into a number of improvements. Some of these were out of scope of the current project or are projected future project additions.
+
+There could be more graphs or other metrics provided in the data breakdown that would allow for more detailed understanding of specific parts of the blueprint, such as page by page breakdowns. There could also be pdf/graph zooming, which would improve user quality of life and make some information more readable. Future teams could also implement annotation hovering for blueprints in the web application, to make it a "one stop shop" for all the user's needs to understanding the construction blueprint and linking beam data to the table. This feature was excluded due to time constraints and being lower on the priority list of the sponsors. Future teams could also look into improving the algorithm further and reducing the runtime of the clustering algorithm, as well as more cohesive integration with the annotation algorithm.
+
+Future teams can also look into transforming beam information about a blueprint into a 3D model of the blueprint. This will greatly enhance user understanding of the blueprint by providing a very clear and concise visual element. This could be shown as an extra tab in the current file view. They can also improve the file system view to provide support for folders and multi-upload, which was determined to be not strictly nessearcy by the current team. 
 
 ## 10 Conclusion
 
