@@ -265,6 +265,7 @@ System testing will be done at the end of the project, when we integrate our fro
 The team’s unit tests and integration tests on the frontend are bundled together. Specifically, the integration tests are in App.test.jsx, and cover authentication flow and user navigation, while all the other tests are unit tests, but some unit tests for larger components like page views also test integration and user interaction with lesser components like paginators.
 
 ![Frontend Coverage](images/Frontend_Coverage.png)
+_Figure 7.1.1 Screenshot of our front end coverage report_
 
 The close to 100% coverage of all functions, lines, and branches of unit tests on the frontend signify that all parts of the web application behave as expected in isolation. This allows the team to ensure that errors that come up during integration testing and further development can be easily accounted for and fixed. The team also made sure to cover user behaviors and interactions with the website during integration testing. Intended user interaction patterns and flow are shown by the functionality testing results to be working as expected, which supports the team’s goal of creating a system that is easy for users to make use of in the sense that there will be no errors that the user does not expect from normal app usage and behavior. By reducing unexpected errors, the team also makes the web app less confusing for new users.
 
@@ -272,7 +273,7 @@ In the backend, we profiled our code to find which functions took the longest fo
 
 ![Profiling](images/Profiling.png)
 
-Figure 7.1.2 _Screenshot of a sentry.io call tree profiling our code_
+_Figure 7.1.2 Screenshot of a sentry.io call tree profiling our code_
 
 ### 7.2 Usability Evaluation
 
@@ -301,6 +302,8 @@ Provide several blueprint files as well as the web application of the project. T
 **Remote Survey**
 
 ![QR code for usability evaluations](images/usability_eval_qr.png)
+
+_Figure 7.2.1 QR code for usability evaluations_
 
 **Survey Qs:**
 
@@ -356,6 +359,12 @@ Provide several blueprint files as well as the web application of the project. T
 
 We conducted 20 usability evaluations combining observed task performance with follow-up interviews and surveys. Participants completed core application tasks—uploading blueprints, navigating file views, and exploring metrics—while evaluators tracked time, user interactions, and common issues. Surveys further assessed ease-of-use, satisfaction, and feature feedback.
 
+![Timed User Study Results](images/User_Study_Timed.png)
+
+_Figure 7.2.2 Timed user study results_
+
+On average, all of the participants spent less than a minute on each of our observational tasks as shown above in Figure 7.2.1. The action that took the longest time was `3. Upload file of choice to home`, and from this observation we found out that users try to navigate to the file by clicking on the file name link within the upload modal. Across all of the tasks, most users were able to complete the entire observation study in undedr 2 minutes with one outlier taking ~160s. The varied change in time for some observations is likely due to inconsistent timing from a different observer and environemnt or an ongoing expression of thought from the user. With this, we can conclude that our application is intuitive to use and easy to navigate for the user
+
 From the post-task survey data, users rated their experience on a 5-point scale:
 
 | Task Area                             | Avg. Rating (1–5) |
@@ -367,6 +376,10 @@ From the post-task survey data, users rated their experience on a 5-point scale:
 | Navigating between pages              | 5.0               |
 | Reading data and graphs               | 4.6               |
 | Color/visual accessibility            | 100% "Yes"        |
+
+![Survey Combined Results](images/Survey_Combined_Results.png)
+
+_Figure 7.2.3 Combined survey question results_
 
 These results indicate that core flows like sign-in, upload, and navigation are highly intuitive. The only area with notable variability was file distinguishability, where some users had difficulty differentiating similar files in the gallery.
 
