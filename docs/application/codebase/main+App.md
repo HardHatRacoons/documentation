@@ -1,51 +1,51 @@
-# main and App.jsx
+# Main and App Configuration
 
 ## Overview
-This ReactJS application is structured to use AWS Amplify for backend services, React Router for routing, and Context API for state management. It includes protected routes and a context for theme management.
+This ReactJS application uses **AWS Amplify** for backend services, **React Router v6** for routing, and the **Context API** for managing user and theme states. Core routing logic is centralized in `App.jsx`, while `main.jsx` handles setup and rendering.
 
 ---
 
 ## File: `main.jsx`
 
 ### Purpose
-This file is the entry point of the React application. It configures AWS Amplify, sets up routing, and provides context for user and theme management.
+This file is the **entry point** of the application. It initializes AWS Amplify, sets up routing with React Router, and wraps the app in global context providers for user and theme state.
 
 ### Key Imports
-- Amplify from `aws-amplify`: Configures AWS backend.  
-- BrowserRouter from `react-router`: Enables client-side routing.  
-- UserProvider from `./components/UserContext`: Provides user state context.  
-- App from `./App`: Main application component.  
-- ThemeContext from `react`: Provides a theme context (light/dark).  
+- `Amplify` from `aws-amplify`: Configures connection to AWS services.  
+- `BrowserRouter` from `react-router`: Enables declarative client-side routing.  
+- `UserProvider` from `./components/UserContext`: Provides user authentication state across components.  
+- `App` from `./App`: Core component that defines the route structure.  
+- `index.css`: Application-wide styles.  
+- `@fontsource/inter`: Custom font setup.
 
 ### Amplify Configuration
-Initializes AWS Amplify with configurations from `amplify_outputs.json`.
-```javascript
+Reads settings from `amplify_outputs.json` and initializes Amplify:
+
+```js
 Amplify.configure(outputs);
 ```
 
-### Context and Rendering
+### Rendering and Context Providers
 ```javascript
 createRoot(document.getElementById('root')).render(
-    <ThemeContext.Provider value="dark">
-        <UserProvider>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </UserProvider>
-    </ThemeContext.Provider>,
+    <UserProvider>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </UserProvider>
 );
 ```
 
-- Wraps the entire app with `ThemeContext` and `UserProvider` for global state management.  
-- BrowserRouter enables client-side routing.  
-- The App component is rendered as the root of the application.
+- UserProvider: Supplies authenticated user state.
+- BrowserRouter: Handles navigation and route changes.
+- App: Contains the full routing configuration.
 
 ---
 
 ## File: `App.jsx`
 
 ### Purpose
-Defines the main routing structure for the application using `react-router`.
+Manages all application routes using **React Router v6**. Integrates protected and public routes, and defines nested route layouts for detailed file views.
 
 ### Routes Structure
 
@@ -93,7 +93,7 @@ Defines the main routing structure for the application using `react-router`.
 ```
 
 ### ProtectedRoute
-- Ensures that certain routes are accessible only to authenticated users.
+- Wraps sensitive pages (like Home and File views) to ensure only authenticated users can access them. Redirects unauthenticated users to the login page.
 
 ### Nested Routes
 - The `/file/:id` path has nested routes that render specific views depending on the URL.
@@ -102,27 +102,31 @@ Defines the main routing structure for the application using `react-router`.
 
 ## Contexts
 
-- **ThemeContext**: Manages the current theme of the application (default is set to `dark`).  
 - **UserProvider**: Provides the user context throughout the application for authentication and state management.  
+- **ThemeContext**: Manages the current theme of the application (default is set to `dark`).  
 
 ---
 
 ## Amplify
 
 - Configured using the `amplify_outputs.json` file.  
-- Can be extended for services like authentication, storage, and API integration.
+- Supports modular integration with services like:
+    - Authentication (Cognito)
+    - Storage (S3)
+    - APIs (API Gateway or Lambda)
 
 ---
 
 ## Styling
 
 - Imports global styles from `./index.css`.
+- Fonts are imported via @fontsource/inter for consistent UI typography.
 
 ---
 
 ## Notes
 
-- Uncomment the `ConsoleLogger` import and related code in `main.jsx` for debugging Amplify issues.  
-- Ensure that the `amplify_outputs.json` file is correctly configured for your AWS resources.
+- You can enable ConsoleLogger for Amplify by uncommenting the line in main.jsx for debugging backend configurations.
+- Always verify that amplify_outputs.json is properly generated and aligned with your current Amplify project.
 
 ---

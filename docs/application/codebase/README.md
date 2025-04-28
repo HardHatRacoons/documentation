@@ -41,17 +41,27 @@ Click on the file name that you would like documentation for.
 
 📄 [`Card.jsx`](/application/codebase/components?id=_2-file-cardjsx) - Represents a selectable card component that can be pinned or unpinned.
 
-📄 [`GoogleSignOut.jsx`](/application/codebase/components?id=_3-file-googlesignoutjsx) - Handles user sign-out functionality.
+📄 [`FileList.jsx`](/application/codebase/components?id=_3-file-filelistjsx) - Displays a responsive grid of user-uploaded files, including thumbnails and delete actions.
 
-📄 [`Paginator.jsx`](/application/codebase/components?id=_4-file-paginatorjsx) - Manages pagination for navigating through multiple pages of content.
+📄 [`GoogleSignOut.jsx`](/application/codebase/components?id=_4-file-googlesignoutjsx) - Handles user sign-out functionality.
 
-📄 [`PDFViewer.jsx`](/application/codebase/components?id=_5-file-pdfviewerjsx) - Displays PDF files with support for pagination and annotation interaction.
+📄 [`Grapher.js`](/application/codebase/components?id=_5-file-grapherjs) - Generates various types of graphs (bar, histogram, pie, text-based) using D3.js to visualize data from PDF annotations.
 
-📄 [`ProtectedRoute.jsx`](/application/codebase/components?id=_6-file-protectedroutejsx) - Protects routes by ensuring only authenticated users can access them.
+📄 [`JsonFetch.js`](/application/codebase/components?id=_6-file-jsonfetchjs) - Handles loading and caching of CSV annotation data.
 
-📄 [`Tabs.jsx`](/application/codebase/components?id=_7-file-tabsjsx) - Provides tabbed navigation for switching between different views or sections.
+📄 [`LoginNavbar.jsx`](/application/codebase/components?id=_7-file-loginnavbarjsx) - Renders the top navigation bar
 
-📄 [`UserContext.jsx`](/application/codebase/components?id=_8-file-usercontextjsx) - Manages and provides user attribute context across the application.
+📄 [`Paginator.jsx`](/application/codebase/components?id=_8-file-paginatorjsx) - Manages pagination for navigating through multiple pages of content.
+
+📄 [`PDFViewer.jsx`](/application/codebase/components?id=_9-file-pdfviewerjsx) - Displays PDF files with support for pagination and annotation interaction.
+
+📄 [`ProtectedRoute.jsx`](/application/codebase/components?id=_10-file-protectedroutejsx) - Protects routes by ensuring only authenticated users can access them.
+
+📄 [`Tabs.jsx`](/application/codebase/components?id=_11-file-tabsjsx) - Provides tabbed navigation for switching between different views or sections.
+
+📄 [`Toggle.jsx`](/application/codebase/components?id=_12-file-togglejsx) - Displays a simple toggle switch with animated movement.
+
+📄 [`UserContext.jsx`](/application/codebase/components?id=_13-file-usercontextjsx) - Manages and provides user attribute context across the application.
 
 ## 📂 [`components/modals`](/application/codebase/modals.md)
 

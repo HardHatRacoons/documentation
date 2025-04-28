@@ -15,15 +15,15 @@
 
 ### Core Features
 - **Tab Navigation**: Allows users to switch between different file views using tabs.
-- **AWS S3 Integration**: 
-  - Fetches URLs for annotated and unannotated PDFs, and associated CSV files.
+- **AWS S3 Integration**:  
+  - Fetches URLs for annotated and unannotated PDFs, and associated CSV files.  
   - Validates the existence of files in the storage.
 - **Dynamic Page Titles**: Displays the file name dynamically based on AWS metadata.
-- **Conditional Rendering**: 
-  - Displays a loading state while fetching data.
+- **Conditional Rendering**:  
+  - Displays a loading state while fetching data.  
   - Handles invalid file states gracefully by displaying error messages.
-- **Navigation Logic**:
-  - Automatically redirects to the first tab (blueprint) if no specific tab is specified.
+- **Navigation Logic**:  
+  - Automatically redirects to the first tab (blueprint) if no specific tab is specified.  
   - Allows users to navigate back to the home page with a back button.
 
 ---
@@ -40,4 +40,8 @@
 
 ### Core Features
 - **Consistent Layout**: Ensures all pages maintain a consistent background and full-screen height.
-- **Outlet Integration**: Dynamically renders nested child components based on routing.
+- **Theme Initialization**:  
+  - Initializes the theme based on localStorage or system preference.  
+  - Saves updated theme value to localStorage when changed.
+- **Outlet Integration**: Dynamically renders nested child components based on routing.  
+  - Passes `[theme, setTheme]` context down to allow child components to react to theme changes.

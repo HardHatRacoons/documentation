@@ -8,11 +8,13 @@
 ### Key Components
 - **PDFViewer**: Renders the PDF document using the URL from context.
 - **BPViewControlPanel**: Displays controls relevant to the PDF.
-- **useOutletContext**: Retrieves context data (like PDF URLs).
+- **useOutletContext**: Retrieves context data (like PDF URLs, page number, and setter).
 
 ### Structure
-- Layout uses Flexbox for a side-by-side view of PDF and controls.
-- The container has styling for borders, padding, and spacing.
+- Selects the annotated PDF if available, otherwise falls back to the unannotated version.
+- Layout uses Flexbox for a side-by-side view of the PDF and control panel.
+- The container has styling for padding, border radius, color themes (light/dark), and spacing.
+- Page number and navigation state are handled outside and passed into the viewer.
 
 ---
 
@@ -21,80 +23,85 @@
 ### Purpose
 - Serves as the dashboard for managing file uploads, deletions, and viewing annotated/unannotated files.
 
-### Key Components
-- **LoginNavbar**: Displays a welcome message and sign-out option.
-- **UploadModal**: Modal component for uploading PDF files.
-- **DeleteConfirmationModal**: Confirms file deletion with a modal.
-- **FileList**: Lists uploaded files with options to delete or view.
-- **GoogleSignOut**: Handles user sign-out.
+### Purpose
+- Displays the main gallery page where users can upload, search, view, and delete blueprint files.
 
-### Core Features
-- Upload and delete PDF files in both "annotated" and "unannotated" folders.
-- Uses AWS Amplify for file storage and management.
-- UI built with Tailwind CSS for responsive design.
-- Provides visual feedback during file uploads and deletions.
+### Key Components
+- **LoginNavbar**: Header with user and theme options.
+- **FileList**: Lists uploaded files with thumbnails and delete buttons.
+- **UploadModal**: Modal for uploading new PDFs.
+- **DeleteConfirmationModal**: Modal to confirm file deletion.
+
+### Structure
+- Uses local state for modals, selected file, search query, and refresh triggers.
+- Includes a search bar with clear functionality.
+- Handles Amplify `remove` calls to delete associated files.
+- Uses `useUser()` and `useOutletContext()` for user and theme context.
 
 ---
 
 ## 3. File: `LoginPage.jsx`
 
 ### Purpose
-- Provides a Google sign-in button to authenticate users.
+- Provides a login screen with Google authentication via AWS Amplify.
 
 ### Key Components
-- **signInWithRedirect**: Initiates Google sign-in.
-- **signOut**: Logs out existing users.
-- **useUser**: Retrieves user context.
+- **signInWithRedirect**: Starts the Google sign-in process.
+- **signOut**: Logs out any existing user.
+- **FcGoogle**: Google icon used in the login button.
 
-### Core Features
-- Displays a centered login form with Google sign-in functionality.
-- Button styling is consistent with app theme using Tailwind CSS.
+### Structure
+- Fullscreen layout with centered login card.
+- Calls `signOut` if a user is already logged in before attempting a new login.
+- Button styled with hover effects and icon + label combo.
 
 ---
 
 ## 4. File: `MetricView.jsx`
 
 ### Purpose
-- Displays a grid of metric cards that users can pin or reorder.
+- Displays a dynamic dashboard of graphs representing metrics extracted from an annotated PDF.
 
 ### Key Components
-- **Card**: Custom component to display metric information.
-- **onPin**: Function to handle pinning/unpinning of metrics.
+- **Card**: Container for each graph with pinning functionality.
+- **fetchJSONData**: Loads data from CSV and JSON sources.
+- **graph()**: Generates visualizations for each metric.
+- **useOutletContext**: Provides access to current PDF data.
 
-### Core Features
-- Metrics can be pinned to appear first in the display.
-- Grid layout for a consistent and organized appearance.
-- Uses Tailwind CSS for styling and spacing.
+### Structure
+- Pinned graph layout is saved and restored via `localStorage`.
+- Graphs re-render when data changes.
+- Responsive grid using CSS and Framer Motion for animation.
+- Uses unique graph options and types per card.
 
 ---
 
 ## 5. File: `NoPage.jsx`
 
 ### Purpose
-- Displays an error message when a user navigates to an undefined route.
+- Renders a fallback page for unmatched routes.
 
 ### Key Components
-- **useNavigate**: Provides navigation to other routes.
+- **useNavigate**: React Router hook to redirect to the homepage.
 
-### Core Features
-- Displays a message indicating the page does not exist.
-- Includes a clickable text to navigate back to the home page.
+### Structure
+- Minimal layout with text and a click-to-return prompt.
+- Includes dark mode text styling.
 
 ---
 
 ## 6. File: `TableView.jsx`
 
 ### Purpose
-- Displays data in a table format using the `ag-Grid` library.
+- Shows raw PDF annotation data in an interactive data grid (AG Grid).
 
 ### Key Components
-- **AgGridReact**: React wrapper for the ag-Grid table.
-- **rowData**: The data to be displayed in the table.
-- **colDefs**: Defines the structure and behavior of table columns.
-- **rowSelection**: Configuration for row selection (multi-row selection enabled).
+- **AgGridReact**: Renders the table using AG Grid.
+- **fetchJSONData**: Fetches JSON-formatted CSV data.
+- **useOutletContext**: Provides access to current PDF data.
 
-### Core Features
-- Displays a customizable and sortable table of data.
-- Supports multi-row selection with pagination.
-- Utilizes memoization for optimized performance.
-- Conditional value formatting for specific columns.
+### Structure
+- Column definitions include filters, sorting, and custom formatting.
+- Uses `useMemo` and `useEffect` to manage data and layout behavior.
+- Responsive layout with dark mode support.
+- Row selection and auto-sizing enabled.
