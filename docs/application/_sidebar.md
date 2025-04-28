@@ -4,6 +4,7 @@
     * [Layouts/](/application/codebase/layouts.md)
     * [Pages/](/application/codebase/pages.md)
     * [Components/](/application/codebase/components.md)
+    * [Modals/](/application/codebase/modals.md)
 
 * [Local Hosting](/application/local_hosting.md)
     * [Setup Amplify Locally](application/local_hosting?id=setup-aws-amplify-locally)
