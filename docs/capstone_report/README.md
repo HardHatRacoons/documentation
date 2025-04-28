@@ -355,6 +355,12 @@ _Figure 7.2.1 QR code for usability evaluations_
 
 - Long form
 
+**Interview**
+We conducted loose, conversational interviews with 5 participants immediately after they completed the study tasks. Our interviews focused on:
+- First impressions of the application.
+- Points where they felt confused or unsure about the objective.
+- Step-by-step discussions for every view within the application.
+
 #### 7.2.2 Evaluation Results and Discussion
 
 We conducted 20 usability evaluations combining observed task performance with follow-up interviews and surveys. Participants completed core application tasks—uploading blueprints, navigating file views, and exploring metrics—while evaluators tracked time, user interactions, and common issues. Surveys further assessed ease-of-use, satisfaction, and feature feedback.
@@ -405,6 +411,12 @@ We identified multiple usability improvements through observations and open-ende
 - Dark/light mode toggling and visual design received praise.
 - Users highlighted the pinning feature, the upload progress indicator, and the overall smooth performance.
 - Color scheme and styling were rated favorably across all participants, including those with accessibility concerns.
+
+In the interview, we found that
+- Users found pinning graphs unclear without a visible animation.
+- Users criticized the random-feeling order of file lists.
+- Positive feedback focused on smooth design flow and ease of navigation.
+- Load times for file lists were repeatedly cited as an area needing improvement.
 
 The results affirm that the application is easy to use and visually accessible, even for users without prior construction software experience. The overwhelmingly positive ratings across all usability dimensions validate the current design direction. However, minor adjustments—especially around visual cues and gallery interactions—could significantly enhance the user experience.
 
