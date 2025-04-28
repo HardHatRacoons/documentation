@@ -357,6 +357,7 @@ _Figure 7.2.1 QR code for usability evaluations_
 
 **Interview**
 We conducted loose, conversational interviews with 5 participants immediately after they completed the study tasks. Our interviews focused on:
+
 - First impressions of the application.
 - Points where they felt confused or unsure about the objective.
 - Step-by-step discussions for every view within the application.
@@ -413,6 +414,7 @@ We identified multiple usability improvements through observations and open-ende
 - Color scheme and styling were rated favorably across all participants, including those with accessibility concerns.
 
 In the interview, we found that
+
 - Users found pinning graphs unclear without a visible animation.
 - Users criticized the random-feeling order of file lists.
 - Positive feedback focused on smooth design flow and ease of navigation.
@@ -452,8 +454,6 @@ Rigorous user studies confirmed the platform’s effectiveness, with participant
 Throughout the development process, the team prioritized accessibility, usability, and technical reliability, aligning with industry best practices and ethical standards. Lessons learned included the importance of early infrastructure decisions and proactive testing integration.
 
 While the current system achieves all major objectives, future work could focus on enhancing file management features, further reducing clustering algorithm runtime, and exploring 3D modeling of structural blueprints. Overall, this project demonstrates that automating blueprint analysis is not only feasible but can meaningfully improve efficiency, accuracy, and accessibility in the construction industry.
-
-
 
 ## References
 
@@ -773,7 +773,7 @@ _Figure A.4.5 Sprint 5 - Evaluation Burndown Chart_
 | 219 | Save blueprint page number across page navigations     | Lucy        | 0      |
 | 220 | Make charts draggable instead of pin in place          | Stella      | 0      |
 | 228 | Cache ghost files while loading in gallery             | Lucy        | 0      |
-| 240 | Ignore shaded segments in blueprint                    | Chris       | 0      | 
+| 240 | Ignore shaded segments in blueprint                    | Chris       | 0      |
 
 ### A.5 Budget
 
