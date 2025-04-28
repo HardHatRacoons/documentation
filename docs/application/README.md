@@ -1,4 +1,4 @@
-# Frontend Documentation
+# Application Documentation
 
 ## How to Run
 
